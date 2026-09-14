@@ -2064,7 +2064,6 @@ section.sqm-market{
   .sqm-adbar{display:none!important}
 }
 </style>
-
 <style>
 /* V7 - desktop space + readability fix */
 
@@ -2301,15 +2300,34 @@ footer{
   }
 }
 </style>
-
 <style>
 #registerPane.buyer-mode .corporate-only{display:none!important}
 #registerPane:not(.buyer-mode) .corporate-only{display:block}
 #registerPane.buyer-mode #buyerSignupNote{display:block}
 #registerPane:not(.buyer-mode) #buyerSignupNote{display:none}
 </style>
-
-</head>
+<style>
+#registerPane.buyer-mode .corporate-section,
+#registerPane.buyer-mode .corporate-only,
+#registerPane.buyer-mode [data-corporate-field="true"]{
+  display:none!important;
+}
+#registerPane.buyer-mode .buyer-only-note{
+  display:block!important;
+  margin-top:10px;
+}
+#registerPane:not(.buyer-mode) .buyer-only-note{
+  display:none!important;
+}
+#registerPane.buyer-mode{
+  padding-bottom:0!important;
+}
+#registerPane.buyer-mode .consent-box,
+#registerPane.buyer-mode .legal-consents,
+#registerPane.buyer-mode .terms-box{
+  margin-top:14px!important;
+}
+</style></head>
 <body>
 <div class="top">
 <span>Türkiye doğal taş sektörünü  alıcılarla buluşturan B2B teklif platformu</span>
@@ -2690,8 +2708,8 @@ footer{
 <span class="eyebrow">HESAP GİRİŞİ</span>
 <h2>Hesabınıza giriş yapın</h2>
 </div>
-<div class="group"><label>E-posta</label><input id="loginEmail" autocomplete="email" placeholder="ornek@firma.com" type="email"/></div>
-<div class="group" style="margin-top:10px"><label>Şifre</label><input id="loginPassword" autocomplete="current-password" type="password" placeholder="Şifreniz"/></div>
+<div class="group"><label>E-posta</label><input autocomplete="email" id="loginEmail" placeholder="ornek@firma.com" type="email"/></div>
+<div class="group" style="margin-top:10px"><label>Şifre</label><input autocomplete="current-password" id="loginPassword" placeholder="Şifreniz" type="password"/></div>
 <button class="btn primary" onclick="login()" style="width:100%;margin-top:14px">Giriş Yap</button>
 <div class="notice hidden" id="loginNotice"></div>
 </div>
@@ -2701,16 +2719,16 @@ footer{
 <h2>Firma hesabınızı oluşturun</h2>
 <p>Stone Quote Market firma hesabı açmak için hesap sahibinin ve firmanın temel kurumsal bilgilerini ister.</p>
 </div>
-<div class="group"><label>Ad Soyad / Yetkili</label><input id="regName" autocomplete="name" placeholder="Adınız Soyadınız"/></div>
-<div class="group" style="margin-top:10px"><label>E-posta</label><input id="regEmail" autocomplete="email" placeholder="ornek@firma.com" type="email"/></div>
-<div class="group" style="margin-top:10px"><label>Şifre</label><input id="regPassword" autocomplete="new-password" placeholder="En az 8 karakter" type="password"/></div>
+<div class="group"><label>Ad Soyad / Yetkili</label><input autocomplete="name" id="regName" placeholder="Adınız Soyadınız"/></div>
+<div class="group" style="margin-top:10px"><label>E-posta</label><input autocomplete="email" id="regEmail" placeholder="ornek@firma.com" type="email"/></div>
+<div class="group" style="margin-top:10px"><label>Şifre</label><input autocomplete="new-password" id="regPassword" placeholder="En az 8 karakter" type="password"/></div>
 <div class="group" style="margin-top:10px"><label>Hesap Türü</label>
 <div class="role-choice">
 <div class="role-card active" data-role="buyer" onclick="pickRole(this,'buyer')"><b>Alıcı</b><p>Taş ve ürün talebi oluşturur.</p></div>
 <div class="role-card" data-role="supplier" onclick="pickRole(this,'supplier')"><b>Üretici / Tedarikçi</b><p>Katalog ekler, taleplere teklif verir.</p></div>
 <div class="role-card" data-role="service" onclick="pickRole(this,'service')"><b>Hizmet Sağlayıcı</b><p>Lojistik, gümrük, ekspertiz vb.</p></div>
 </div>
-</div><div class="corporate-register">
+</div><div class="corporate-register corporate-section">
 <div class="register-heading">
 <span>FİRMA BİLGİLERİ</span>
 <small>Firma hesabı açmak için kurumsal bilgiler zorunludur.</small>
@@ -2719,7 +2737,7 @@ footer{
       Türkiye dışındaki firmalarda vergi / sicil alanları ülkenizdeki eşdeğer resmi şirket bilgileriyle doldurulabilir.
     </div>
 <div class="form-grid">
-<div class="corporate-only group full">
+<div class="corporate-only group full" data-corporate-field="true">
 <label>Şirket Hukuki Türü *</label>
 <select id="regLegalType" onchange="toggleCorporateDocs()" required="">
 <option value="">Seçiniz</option>
@@ -2732,7 +2750,7 @@ footer{
 <option value="other">Diğer</option>
 </select>
 </div>
-<div class="corporate-only group full">
+<div class="corporate-only group full" data-corporate-field="true">
 <label>Faaliyet Türü *</label>
 <select id="regCompanyType" required="">
 <option value="">Seçiniz</option>
@@ -2750,35 +2768,35 @@ footer{
 <option>Diğer Sektör Hizmeti</option>
 </select>
 </div>
-<div class="corporate-only group">
+<div class="corporate-only group" data-corporate-field="true">
 <label>Ticari Unvan *</label>
 <input id="regLegalName" placeholder="Örn. ABC Mermer San. ve Tic. Ltd. Şti." required="" type="text"/>
 </div>
-<div class="corporate-only group">
+<div class="corporate-only group" data-corporate-field="true">
 <label>Vergi Numarası *</label>
 <input id="regTaxNo" placeholder="Vergi numarası" required="" type="text"/>
 </div>
-<div class="corporate-only group">
+<div class="corporate-only group" data-corporate-field="true">
 <label>Vergi Dairesi *</label>
 <input id="regTaxOffice" placeholder="Vergi dairesi" required="" type="text"/>
 </div>
-<div class="corporate-only group">
+<div class="corporate-only group" data-corporate-field="true">
 <label>MERSİS No</label>
 <input id="regMersisNo" placeholder="Varsa MERSİS numarası" type="text"/>
 </div>
-<div class="corporate-only group">
+<div class="corporate-only group" data-corporate-field="true">
 <label>Ticaret Sicil No</label>
 <input id="regRegistryNo" placeholder="Ticaret sicil numarası" type="text"/>
 </div>
-<div class="corporate-only group">
+<div class="corporate-only group" data-corporate-field="true">
 <label>Ülke *</label>
 <input id="regCountry" placeholder="Türkiye" required="" type="text"/>
 </div>
-<div class="corporate-only group">
+<div class="corporate-only group" data-corporate-field="true">
 <label>Şehir *</label>
 <input id="regCity" placeholder="Afyonkarahisar" required="" type="text"/>
 </div>
-<div class="corporate-only group full">
+<div class="corporate-only group full" data-corporate-field="true">
 <label>Firma Adresi *</label>
 <textarea id="regCompanyAddress" placeholder="Açık firma adresi" required="" rows="2"></textarea>
 </div>
@@ -2788,23 +2806,23 @@ footer{
 <small>Firma adına hesabı yönetecek kişi.</small>
 </div>
 <div class="form-grid">
-<div class="corporate-only group">
+<div class="corporate-only group" data-corporate-field="true">
 <label>Ad Soyad *</label>
 <input id="regAuthorizedName" placeholder="Yetkili kişinin adı soyadı" required="" type="text"/>
 </div>
-<div class="corporate-only group">
+<div class="corporate-only group" data-corporate-field="true">
 <label>Görevi / Ünvanı *</label>
 <input id="regAuthorizedTitle" placeholder="Satış Müdürü, Firma Sahibi..." required="" type="text"/>
 </div>
-<div class="corporate-only group">
+<div class="corporate-only group" data-corporate-field="true">
 <label>Kurumsal E-posta *</label>
 <input id="regCorporateEmail" placeholder="isim@firma.com" required="" type="email"/>
 </div>
-<div class="corporate-only group">
+<div class="corporate-only group" data-corporate-field="true">
 <label>Telefon *</label>
 <input id="regPhone" placeholder="+90 ..." required="" type="tel"/>
 </div>
-<div class="corporate-only group full">
+<div class="corporate-only group full" data-corporate-field="true">
 <label>Web Sitesi</label>
 <input id="regWebsite" placeholder="https://firma.com" type="url"/>
 </div>
@@ -2814,12 +2832,12 @@ footer{
 <small>Başvuru sonrası belgeler kontrol edilir. Kontrol tamamlanınca “Doğrulanmış Firma” rozeti verilebilir.</small>
 </div>
 <div class="form-grid">
-<div class="corporate-only group full">
+<div class="corporate-only group full" data-corporate-field="true">
 <label>Firma Doğrulama Belgesi *</label>
 <input accept=".pdf,image/jpeg,image/png" id="regCompanyDocument" required="" type="file"/>
 <small class="register-help">Vergi levhası, faaliyet belgesi, oda kayıt belgesi veya eşdeğer resmi belge.</small>
 </div>
-<div class="corporate-only group full" id="capitalCompanyDocs">
+<div class="corporate-only group full" data-corporate-field="true" id="capitalCompanyDocs">
 <label>Ek Kurumsal Belge</label>
 <input accept=".pdf,image/jpeg,image/png" id="regAdditionalDocument" type="file"/>
 <small class="register-help">Limited / Anonim şirketlerde ticaret sicil gazetesi veya faaliyet belgesi eklenebilir. Yalnızca temsil ve şirket bilgilerinin doğrulanması için kullanılır.</small>
@@ -2989,9 +3007,14 @@ function esc(s){return String(s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&l
 function applyRoleRegistrationMode(){
   const pane=document.getElementById('registerPane');
   const isBuyer=selectedRole==='buyer';
+
   pane?.classList.toggle('buyer-mode',isBuyer);
-  document.querySelectorAll('#registerPane .corporate-only input, #registerPane .corporate-only select, #registerPane .corporate-only textarea')
-    .forEach(field=>field.disabled=isBuyer);
+
+  document.querySelectorAll('#registerPane .corporate-only input, #registerPane .corporate-only select, #registerPane .corporate-only textarea, #registerPane .corporate-section input, #registerPane .corporate-section select, #registerPane .corporate-section textarea')
+    .forEach(field=>{
+      field.disabled=isBuyer;
+      if(isBuyer && field.type==='file') field.value='';
+    });
 }
 
 function openAuth(mode){
@@ -3008,16 +3031,7 @@ function pickRole(el,role){
   selectedRole=role;
   document.querySelectorAll('.role-card').forEach(x=>x.classList.remove('active'));
   el?.classList.add('active');
-
-  const pane=document.getElementById('registerPane');
-  const isBuyer=role==='buyer';
-  pane?.classList.toggle('buyer-mode',isBuyer);
-
-  document.querySelectorAll('#registerPane .corporate-only input, #registerPane .corporate-only select, #registerPane .corporate-only textarea')
-    .forEach(field=>{
-      field.disabled=isBuyer;
-      if(isBuyer && field.type==='file') field.value='';
-    });
+  applyRoleRegistrationMode();
 }
 async function login(){
  if(!requireSupabase('loginNotice'))return;
@@ -3028,7 +3042,7 @@ async function login(){
  catch(err){console.error(err);showAuthMessage('E-posta veya şifre hatalı ya da hesap henüz doğrulanmamış olabilir.','error','loginNotice');}
  finally{if(button){button.disabled=false;button.textContent=oldText||'Giriş Yap';}}
 }
-async async function register(){
+async function register(){
   if(!requireSupabase()) return;
 
   const termsBox=document.getElementById('termsConsent');
