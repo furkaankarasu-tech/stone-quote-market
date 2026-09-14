@@ -2301,6 +2301,14 @@ footer{
   }
 }
 </style>
+
+<style>
+#registerPane.buyer-mode .corporate-only{display:none!important}
+#registerPane:not(.buyer-mode) .corporate-only{display:block}
+#registerPane.buyer-mode #buyerSignupNote{display:block}
+#registerPane:not(.buyer-mode) #buyerSignupNote{display:none}
+</style>
+
 </head>
 <body>
 <div class="top">
@@ -2621,7 +2629,7 @@ footer{
 </div>
 <div class="form-card">
 <div class="form-grid">
-<div class="group"><label>Taş / Ürün</label><input id="reqStone" placeholder="Örn. Afyon White"/></div>
+<div class="corporate-only group"><label>Taş / Ürün</label><input id="reqStone" placeholder="Örn. Afyon White"/></div>
 <div class="group"><label>Ürün Formatı</label><select id="reqFormat"><option>Plaka</option><option>Blok</option><option>Ebatlı</option><option>Fayans</option><option value="Mozaik">Mozaik</option></select></div>
 <div class="group"><label>Miktar</label><input id="reqQty" placeholder="1500" type="number"/></div>
 <div class="group"><label>Birim</label><select id="reqUnit"><option>m²</option><option>ton</option><option>adet</option><option>konteyner</option></select></div>
@@ -2711,7 +2719,7 @@ footer{
       Türkiye dışındaki firmalarda vergi / sicil alanları ülkenizdeki eşdeğer resmi şirket bilgileriyle doldurulabilir.
     </div>
 <div class="form-grid">
-<div class="group full">
+<div class="corporate-only group full">
 <label>Şirket Hukuki Türü *</label>
 <select id="regLegalType" onchange="toggleCorporateDocs()" required="">
 <option value="">Seçiniz</option>
@@ -2724,7 +2732,7 @@ footer{
 <option value="other">Diğer</option>
 </select>
 </div>
-<div class="group full">
+<div class="corporate-only group full">
 <label>Faaliyet Türü *</label>
 <select id="regCompanyType" required="">
 <option value="">Seçiniz</option>
@@ -2742,35 +2750,35 @@ footer{
 <option>Diğer Sektör Hizmeti</option>
 </select>
 </div>
-<div class="group">
+<div class="corporate-only group">
 <label>Ticari Unvan *</label>
 <input id="regLegalName" placeholder="Örn. ABC Mermer San. ve Tic. Ltd. Şti." required="" type="text"/>
 </div>
-<div class="group">
+<div class="corporate-only group">
 <label>Vergi Numarası *</label>
 <input id="regTaxNo" placeholder="Vergi numarası" required="" type="text"/>
 </div>
-<div class="group">
+<div class="corporate-only group">
 <label>Vergi Dairesi *</label>
 <input id="regTaxOffice" placeholder="Vergi dairesi" required="" type="text"/>
 </div>
-<div class="group">
+<div class="corporate-only group">
 <label>MERSİS No</label>
 <input id="regMersisNo" placeholder="Varsa MERSİS numarası" type="text"/>
 </div>
-<div class="group">
+<div class="corporate-only group">
 <label>Ticaret Sicil No</label>
 <input id="regRegistryNo" placeholder="Ticaret sicil numarası" type="text"/>
 </div>
-<div class="group">
+<div class="corporate-only group">
 <label>Ülke *</label>
 <input id="regCountry" placeholder="Türkiye" required="" type="text"/>
 </div>
-<div class="group">
+<div class="corporate-only group">
 <label>Şehir *</label>
 <input id="regCity" placeholder="Afyonkarahisar" required="" type="text"/>
 </div>
-<div class="group full">
+<div class="corporate-only group full">
 <label>Firma Adresi *</label>
 <textarea id="regCompanyAddress" placeholder="Açık firma adresi" required="" rows="2"></textarea>
 </div>
@@ -2780,23 +2788,23 @@ footer{
 <small>Firma adına hesabı yönetecek kişi.</small>
 </div>
 <div class="form-grid">
-<div class="group">
+<div class="corporate-only group">
 <label>Ad Soyad *</label>
 <input id="regAuthorizedName" placeholder="Yetkili kişinin adı soyadı" required="" type="text"/>
 </div>
-<div class="group">
+<div class="corporate-only group">
 <label>Görevi / Ünvanı *</label>
 <input id="regAuthorizedTitle" placeholder="Satış Müdürü, Firma Sahibi..." required="" type="text"/>
 </div>
-<div class="group">
+<div class="corporate-only group">
 <label>Kurumsal E-posta *</label>
 <input id="regCorporateEmail" placeholder="isim@firma.com" required="" type="email"/>
 </div>
-<div class="group">
+<div class="corporate-only group">
 <label>Telefon *</label>
 <input id="regPhone" placeholder="+90 ..." required="" type="tel"/>
 </div>
-<div class="group full">
+<div class="corporate-only group full">
 <label>Web Sitesi</label>
 <input id="regWebsite" placeholder="https://firma.com" type="url"/>
 </div>
@@ -2806,12 +2814,12 @@ footer{
 <small>Başvuru sonrası belgeler kontrol edilir. Kontrol tamamlanınca “Doğrulanmış Firma” rozeti verilebilir.</small>
 </div>
 <div class="form-grid">
-<div class="group full">
+<div class="corporate-only group full">
 <label>Firma Doğrulama Belgesi *</label>
 <input accept=".pdf,image/jpeg,image/png" id="regCompanyDocument" required="" type="file"/>
 <small class="register-help">Vergi levhası, faaliyet belgesi, oda kayıt belgesi veya eşdeğer resmi belge.</small>
 </div>
-<div class="group full" id="capitalCompanyDocs">
+<div class="corporate-only group full" id="capitalCompanyDocs">
 <label>Ek Kurumsal Belge</label>
 <input accept=".pdf,image/jpeg,image/png" id="regAdditionalDocument" type="file"/>
 <small class="register-help">Limited / Anonim şirketlerde ticaret sicil gazetesi veya faaliyet belgesi eklenebilir. Yalnızca temsil ve şirket bilgilerinin doğrulanması için kullanılır.</small>
@@ -2977,7 +2985,17 @@ function saveAll(){
   // Auth oturumu Supabase Auth tarafından yönetilir.
 }
 function esc(s){return String(s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
-function openAuth(mode){document.getElementById('authModal').classList.add('show');switchAuth(mode)}
+
+function applyRoleRegistrationMode(){
+  const pane=document.getElementById('registerPane');
+  const isBuyer=selectedRole==='buyer';
+  pane?.classList.toggle('buyer-mode',isBuyer);
+  document.querySelectorAll('#registerPane .corporate-only input, #registerPane .corporate-only select, #registerPane .corporate-only textarea')
+    .forEach(field=>field.disabled=isBuyer);
+}
+
+function openAuth(mode){
+  setTimeout(applyRoleRegistrationMode,0);document.getElementById('authModal').classList.add('show');switchAuth(mode)}
 function closeModal(id){document.getElementById(id).classList.remove('show')}
 function switchAuth(mode){
   const login=mode==='login';
@@ -2989,7 +3007,17 @@ function switchAuth(mode){
 function pickRole(el,role){
   selectedRole=role;
   document.querySelectorAll('.role-card').forEach(x=>x.classList.remove('active'));
-  el.classList.add('active');
+  el?.classList.add('active');
+
+  const pane=document.getElementById('registerPane');
+  const isBuyer=role==='buyer';
+  pane?.classList.toggle('buyer-mode',isBuyer);
+
+  document.querySelectorAll('#registerPane .corporate-only input, #registerPane .corporate-only select, #registerPane .corporate-only textarea')
+    .forEach(field=>{
+      field.disabled=isBuyer;
+      if(isBuyer && field.type==='file') field.value='';
+    });
 }
 async function login(){
  if(!requireSupabase('loginNotice'))return;
@@ -3000,23 +3028,156 @@ async function login(){
  catch(err){console.error(err);showAuthMessage('E-posta veya şifre hatalı ya da hesap henüz doğrulanmamış olabilir.','error','loginNotice');}
  finally{if(button){button.disabled=false;button.textContent=oldText||'Giriş Yap';}}
 }
-async function register(){
- if(!requireSupabase())return;
- const termsBox=document.getElementById('termsConsent'),kvkkBox=document.getElementById('kvkkNotice'),marketingBox=document.getElementById('marketingConsent');
- if(termsBox&&!termsBox.checked){showAuthMessage('Kayıt olmak için Kullanım Koşulları’nı kabul etmelisiniz.','error');return;}
- if(kvkkBox&&!kvkkBox.checked){showAuthMessage('Kayıt olmak için KVKK Aydınlatma Metni’ni okuduğunuzu onaylamalısınız.','error');return;}
- const fields={full_name:document.getElementById('regName').value.trim(),email:document.getElementById('regEmail').value.trim().toLowerCase(),password:document.getElementById('regPassword').value,role:normalizedRole(selectedRole),legal_type:document.getElementById('regLegalType').value,activity_type:document.getElementById('regCompanyType').value,legal_name:document.getElementById('regLegalName').value.trim(),tax_no:document.getElementById('regTaxNo').value.trim(),tax_office:document.getElementById('regTaxOffice').value.trim(),mersis_no:document.getElementById('regMersisNo').value.trim(),registry_no:document.getElementById('regRegistryNo').value.trim(),country:document.getElementById('regCountry').value.trim(),city:document.getElementById('regCity').value.trim(),company_address:document.getElementById('regCompanyAddress').value.trim(),authorized_name:document.getElementById('regAuthorizedName').value.trim(),authorized_title:document.getElementById('regAuthorizedTitle').value.trim(),corporate_email:document.getElementById('regCorporateEmail').value.trim().toLowerCase(),phone:document.getElementById('regPhone').value.trim(),website:document.getElementById('regWebsite').value.trim()};
- const required=[['Ad Soyad',fields.full_name],['E-posta',fields.email],['Şirket Hukuki Türü',fields.legal_type],['Faaliyet Türü',fields.activity_type],['Ticari Unvan',fields.legal_name],['Vergi Numarası',fields.tax_no],['Vergi Dairesi',fields.tax_office],['Ülke',fields.country],['Şehir',fields.city],['Firma Adresi',fields.company_address],['Yetkili Ad Soyad',fields.authorized_name],['Yetkili Görevi',fields.authorized_title],['Kurumsal E-posta',fields.corporate_email],['Telefon',fields.phone]];
- const missing=required.find(([,v])=>!v);if(missing){showAuthMessage(`${missing[0]} alanını doldurun.`,'error');return;} if(fields.password.length<8){showAuthMessage('Şifre en az 8 karakter olmalı.','error');return;}
- const mainDoc=document.getElementById('regCompanyDocument')?.files?.[0]||null,extraDoc=document.getElementById('regAdditionalDocument')?.files?.[0]||null;if(!mainDoc){showAuthMessage('Firma doğrulama belgesini seçin.','error');return;}
- const submit=document.querySelector('#registerPane > .btn.primary');const oldText=submit?.textContent;if(submit){submit.disabled=true;submit.textContent='Hesap oluşturuluyor...';}showAuthMessage('');
- try{const metadata={...fields,terms_accepted:true,kvkk_acknowledged:true,marketing_consent:!!marketingBox?.checked,consented_at:new Date().toISOString()};delete metadata.email;delete metadata.password;
-  const {data,error}=await sqmSupabase.auth.signUp({email:fields.email,password:fields.password,options:{data:metadata,emailRedirectTo:window.location.origin+window.location.pathname}});if(error)throw error;
-  if(data.session&&data.user){try{await uploadVerificationFile(data.user.id,mainDoc,'company-document');if(extraDoc)await uploadVerificationFile(data.user.id,extraDoc,'additional-document');}catch(uploadError){console.error('Belge yükleme hatası:',uploadError);showAuthMessage('Hesap oluşturuldu ancak doğrulama belgesi yüklenemedi. Giriş yaptıktan sonra tekrar yüklenmesi gerekecek.','error');}
-   currentUser=await loadSupabaseCurrentUser(data.user);closeModal('authModal');renderSession();document.getElementById('dashboard')?.scrollIntoView({behavior:'smooth'});return;}
-  showAuthMessage('Hesap oluşturuldu. E-posta adresinize gelen doğrulama bağlantısını açın; ardından giriş yapabilirsiniz. Doğrulama belgesi ilk girişten sonra sisteme yüklenir.','success');
- }catch(err){console.error(err);const msg=(err?.message||'').toLowerCase();const friendly=msg.includes('already registered')?'Bu e-posta adresiyle daha önce hesap oluşturulmuş.':msg.includes('password')?'Şifre güvenlik kurallarını karşılamıyor.':'Üyelik oluşturulamadı. Bilgileri kontrol edip tekrar deneyin.';showAuthMessage(friendly,'error');}
- finally{if(submit){submit.disabled=false;submit.textContent=oldText||'Üyeliği Oluştur';}}
+async async function register(){
+  if(!requireSupabase()) return;
+
+  const termsBox=document.getElementById('termsConsent');
+  const kvkkBox=document.getElementById('kvkkNotice');
+  const marketingBox=document.getElementById('marketingConsent');
+
+  if(termsBox && !termsBox.checked){
+    showAuthMessage('Kayıt olmak için Kullanım Koşulları’nı kabul etmelisiniz.','error');
+    return;
+  }
+  if(kvkkBox && !kvkkBox.checked){
+    showAuthMessage('Kayıt olmak için KVKK Aydınlatma Metni’ni okuduğunuzu onaylamalısınız.','error');
+    return;
+  }
+
+  const role=normalizedRole(selectedRole);
+  const isBuyer=role==='buyer';
+
+  const common={
+    full_name:document.getElementById('regName').value.trim(),
+    email:document.getElementById('regEmail').value.trim().toLowerCase(),
+    password:document.getElementById('regPassword').value,
+    role
+  };
+
+  if(!common.full_name){
+    showAuthMessage('Ad Soyad alanını doldurun.','error');
+    return;
+  }
+  if(!common.email){
+    showAuthMessage('E-posta alanını doldurun.','error');
+    return;
+  }
+  if(common.password.length<8){
+    showAuthMessage('Şifre en az 8 karakter olmalı.','error');
+    return;
+  }
+
+  const company=isBuyer ? {} : {
+    legal_type:document.getElementById('regLegalType').value,
+    activity_type:document.getElementById('regCompanyType').value,
+    legal_name:document.getElementById('regLegalName').value.trim(),
+    tax_no:document.getElementById('regTaxNo').value.trim(),
+    tax_office:document.getElementById('regTaxOffice').value.trim(),
+    mersis_no:document.getElementById('regMersisNo').value.trim(),
+    registry_no:document.getElementById('regRegistryNo').value.trim(),
+    country:document.getElementById('regCountry').value.trim(),
+    city:document.getElementById('regCity').value.trim(),
+    company_address:document.getElementById('regCompanyAddress').value.trim(),
+    authorized_name:document.getElementById('regAuthorizedName').value.trim(),
+    authorized_title:document.getElementById('regAuthorizedTitle').value.trim(),
+    corporate_email:document.getElementById('regCorporateEmail').value.trim().toLowerCase(),
+    phone:document.getElementById('regPhone').value.trim(),
+    website:document.getElementById('regWebsite').value.trim()
+  };
+
+  if(!isBuyer){
+    const required=[
+      ['Şirket Hukuki Türü',company.legal_type],
+      ['Faaliyet Türü',company.activity_type],
+      ['Ticari Unvan',company.legal_name],
+      ['Vergi Numarası',company.tax_no],
+      ['Vergi Dairesi',company.tax_office],
+      ['Ülke',company.country],
+      ['Şehir',company.city],
+      ['Firma Adresi',company.company_address],
+      ['Yetkili Ad Soyad',company.authorized_name],
+      ['Yetkili Görevi',company.authorized_title],
+      ['Kurumsal E-posta',company.corporate_email],
+      ['Telefon',company.phone]
+    ];
+    const missing=required.find(([,value])=>!value);
+    if(missing){
+      showAuthMessage(`${missing[0]} alanını doldurun.`,'error');
+      return;
+    }
+  }
+
+  const mainDoc=isBuyer ? null : (document.getElementById('regCompanyDocument')?.files?.[0]||null);
+  const extraDoc=isBuyer ? null : (document.getElementById('regAdditionalDocument')?.files?.[0]||null);
+
+  if(!isBuyer && !mainDoc){
+    showAuthMessage('Firma doğrulama belgesini seçin.','error');
+    return;
+  }
+
+  const submit=document.querySelector('#registerPane > .btn.primary');
+  const oldText=submit?.textContent;
+  if(submit){submit.disabled=true;submit.textContent='Hesap oluşturuluyor...';}
+  showAuthMessage('');
+
+  try{
+    const metadata={
+      ...common,
+      ...company,
+      terms_accepted:true,
+      kvkk_acknowledged:true,
+      marketing_consent:!!marketingBox?.checked,
+      consented_at:new Date().toISOString()
+    };
+    delete metadata.email;
+    delete metadata.password;
+
+    const {data,error}=await sqmSupabase.auth.signUp({
+      email:common.email,
+      password:common.password,
+      options:{
+        data:metadata,
+        emailRedirectTo:window.location.origin+window.location.pathname
+      }
+    });
+    if(error) throw error;
+
+    if(data.session && data.user){
+      if(!isBuyer && mainDoc){
+        try{
+          await uploadVerificationFile(data.user.id,mainDoc,'company-document');
+          if(extraDoc) await uploadVerificationFile(data.user.id,extraDoc,'additional-document');
+        }catch(uploadError){
+          console.error('Belge yükleme hatası:',uploadError);
+          showAuthMessage('Hesap oluşturuldu ancak doğrulama belgesi yüklenemedi. Giriş yaptıktan sonra tekrar yüklenmesi gerekecek.','error');
+        }
+      }
+
+      currentUser=await loadSupabaseCurrentUser(data.user);
+      closeModal('authModal');
+      renderSession();
+      document.getElementById('dashboard')?.scrollIntoView({behavior:'smooth'});
+      return;
+    }
+
+    showAuthMessage(
+      isBuyer
+        ? 'Alıcı hesabınız oluşturuldu. E-posta adresinize gelen doğrulama bağlantısını açın; ardından giriş yapabilirsiniz.'
+        : 'Firma hesabınız oluşturuldu. E-posta adresinize gelen doğrulama bağlantısını açın; ardından giriş yapabilirsiniz.',
+      'success'
+    );
+  }catch(err){
+    console.error(err);
+    const msg=(err?.message||'').toLowerCase();
+    const friendly=msg.includes('already registered')
+      ? 'Bu e-posta adresiyle daha önce hesap oluşturulmuş.'
+      : msg.includes('password')
+      ? 'Şifre güvenlik kurallarını karşılamıyor.'
+      : 'Üyelik oluşturulamadı. Bilgileri kontrol edip tekrar deneyin.';
+    showAuthMessage(friendly,'error');
+  }finally{
+    if(submit){submit.disabled=false;submit.textContent=oldText||'Üyeliği Oluştur';}
+  }
 }
 async function logout(){if(sqmSupabase){const {error}=await sqmSupabase.auth.signOut();if(error)console.warn('Çıkış hatası:',error);}currentUser=null;renderSession();}
 function renderSession(){
