@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Stone Quote Market | Natural Stone Marketplace</title>
+<title>Marble Borsa | Natural Stone Marketplace</title>
 <style>
 :root{
   --bg:#f4f1eb;--paper:#fffdfa;--ink:#272522;--muted:#746f67;--line:#ddd6ca;
@@ -53,7 +53,7 @@ footer{padding:34px 5%;border-top:1px solid var(--line);display:flex;justify-con
 @media(max-width:650px){.top{display:none}.hero h1{font-size:46px}.cols4,.cols3,.form-grid,.panel-grid,.role-choice,.trustbar{grid-template-columns:1fr}.supplier{grid-template-columns:auto 1fr}.supplier .actions{grid-column:1/-1}.dash-top{align-items:flex-start;flex-direction:column}.section-head h2,.buy-panel h2{font-size:34px}}
 </style>
 <style>
-/* Stone Quote Market — editorial natural-stone redesign */
+/* Marble Borsa — editorial natural-stone redesign */
 :root{
   --bg:#f2efe8;
   --paper:#fbfaf6;
@@ -705,7 +705,7 @@ input[type=file]{width:100%;padding:11px;border:1px solid #d7d0c4;border-radius:
 }
 </style>
 <style>
-/* Stone Quote Market - compact marketplace layout */
+/* Marble Borsa - compact marketplace layout */
 body{
   background:#f2f2ef!important;
   color:#2d322e;
@@ -2327,7 +2327,823 @@ footer{
 #registerPane.buyer-mode .terms-box{
   margin-top:14px!important;
 }
-</style></head>
+</style>
+<style>
+.sqm-brand-wordmark{
+  display:inline-block;
+  font-family:Arial,Helvetica,sans-serif!important;
+  font-size:21px!important;
+  line-height:1!important;
+  font-weight:800!important;
+  font-style:normal!important;
+  letter-spacing:-.4px!important;
+  color:#1f2a21!important;
+  text-decoration:none!important;
+}
+.sqm-brand-sub{
+  display:inline-block;
+  margin-left:10px;
+  padding-left:10px;
+  border-left:1px solid #d8d2c5;
+  font-family:Arial,Helvetica,sans-serif!important;
+  font-size:7px!important;
+  font-weight:500!important;
+  letter-spacing:1.4px!important;
+  color:#8b877e!important;
+  vertical-align:middle;
+}
+</style>
+
+
+<style>
+/* v10.2 - desktop yerleşim dengesi
+   Yan bloklar ekran kenarlarına açılır, orta alan genişler. */
+@media (min-width:1321px){
+  section.sqm-market{
+    width:calc(100% - 28px)!important;
+    max-width:1580px!important;
+    grid-template-columns:180px 210px minmax(650px,1fr) 300px!important;
+    column-gap:16px!important;
+    margin:14px auto 20px!important;
+    align-items:start!important;
+  }
+
+  .sqm-hero-inner{
+    width:calc(100% - 28px)!important;
+    max-width:1580px!important;
+  }
+
+  /* Sol reklam sütunu artık kendi kolonunu gerçekten doldurur */
+  .sqm-adbar{
+    width:100%!important;
+    align-items:stretch!important;
+  }
+  .sqm-adbar .ad-card{
+    width:100%!important;
+    box-sizing:border-box!important;
+    margin-left:0!important;
+    margin-right:0!important;
+  }
+
+  .sqm-sidebar,
+  .sqm-content,
+  .sqm-rightbar{
+    width:100%!important;
+    min-width:0!important;
+    box-sizing:border-box!important;
+  }
+
+  /* Orta alanın ürünleri küçük görünmesin */
+  #slot-directory .grid.cols4{
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    gap:14px!important;
+  }
+  #slot-directory .stone-img{
+    height:230px!important;
+  }
+
+  /* Sağ taraf da kolonun tamamını kullansın */
+  .sqm-rightbar > *{
+    width:100%!important;
+    box-sizing:border-box!important;
+  }
+  .new-item{
+    grid-template-columns:62px minmax(0,1fr)!important;
+  }
+  .new-thumb{
+    width:62px!important;
+    height:62px!important;
+  }
+}
+
+/* 1440-1321 arası da eski kadar sıkışık kalmasın */
+@media (min-width:1121px) and (max-width:1320px){
+  section.sqm-market{
+    width:calc(100% - 24px)!important;
+    max-width:none!important;
+    grid-template-columns:150px 185px minmax(0,1fr) 250px!important;
+    gap:12px!important;
+  }
+  .sqm-hero-inner{
+    width:calc(100% - 24px)!important;
+    max-width:none!important;
+  }
+  .sqm-adbar,
+  .sqm-sidebar,
+  .sqm-content,
+  .sqm-rightbar{
+    width:100%!important;
+    min-width:0!important;
+  }
+}
+</style>
+
+
+<style>
+/* v10.3 - üst boşluğu gerçek bir kompakt hero alanına çevir */
+.sqm-hero{
+  position:relative!important;
+  min-height:0!important;
+  height:auto!important;
+  padding:0!important;
+  overflow:hidden!important;
+  border-bottom:1px solid #d8d4ca!important;
+  background:
+    linear-gradient(118deg, transparent 0 56%, rgba(66,76,65,.055) 56.2% 57%, transparent 57.2% 100%),
+    linear-gradient(132deg, transparent 0 72%, rgba(163,139,103,.09) 72.2% 73%, transparent 73.2% 100%),
+    linear-gradient(102deg, transparent 0 23%, rgba(54,68,57,.04) 23.2% 23.8%, transparent 24% 100%),
+    #f6f3ec!important;
+}
+.sqm-hero:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(90deg,rgba(255,255,255,.70),rgba(255,255,255,.18) 58%,rgba(255,255,255,.04));
+}
+.sqm-hero-inner{
+  position:relative!important;
+  z-index:1!important;
+  min-height:132px!important;
+  padding:26px 4px 24px!important;
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) auto!important;
+  align-items:center!important;
+  gap:28px!important;
+  box-sizing:border-box!important;
+}
+.sqm-hero h1{
+  margin:0 0 7px!important;
+  font-size:30px!important;
+  line-height:1.08!important;
+  letter-spacing:-.7px!important;
+}
+.sqm-hero p{
+  margin:0!important;
+  max-width:650px!important;
+  font-size:12px!important;
+  line-height:1.55!important;
+  color:#5f625c!important;
+}
+.sqm-hero-actions{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-end!important;
+  gap:9px!important;
+  margin:0!important;
+}
+.sqm-hero-actions .btn{
+  min-height:38px!important;
+  padding:0 17px!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+
+/* breadcrumb da dev bir boşluk üretmesin */
+.breadcrumb,
+.breadcrumbs,
+.sqm-breadcrumb{
+  margin-top:0!important;
+  margin-bottom:0!important;
+  min-height:0!important;
+}
+
+/* Ana marketplace hero'ya daha yakın başlasın */
+section.sqm-market{
+  margin-top:12px!important;
+}
+
+@media(max-width:720px){
+  .sqm-hero-inner{
+    min-height:auto!important;
+    padding:20px 14px!important;
+    grid-template-columns:1fr!important;
+    gap:14px!important;
+  }
+  .sqm-hero h1{font-size:25px!important}
+  .sqm-hero-actions{justify-content:flex-start!important}
+}
+</style>
+
+
+<style>
+section.sqm-hero{padding:0!important;margin:0!important;}
+</style>
+
+
+<style>
+.demo-login-btn{
+  background:#f1eee5!important;
+  border:1px solid #b9b3a6!important;
+  color:#2e3c31!important;
+  margin-right:6px!important;
+}
+.demo-login-btn:hover{
+  background:#e8e3d7!important;
+}
+</style>
+
+
+<style>
+.demo-credentials{
+  margin:0 0 14px;
+  padding:11px 12px;
+  border:1px solid #d6d0c3;
+  background:#f5f2e9;
+  font-size:11px;
+  line-height:1.55;
+}
+.demo-credentials b{display:block;margin-bottom:3px;color:#2d3e32}
+.demo-credentials span{display:block;color:#555}
+.new-tabs button{cursor:pointer}
+.new-item{cursor:pointer}
+.new-item:hover{background:#f5f2e9}
+.recent-hit{
+  outline:2px solid #435746!important;
+  outline-offset:2px;
+  transition:outline .2s ease;
+}
+</style>
+
+
+<style>
+.mb-language-switcher{
+  display:inline-flex;
+  align-items:center;
+  gap:2px;
+  margin-right:10px;
+  border:1px solid #d6d0c3;
+  background:#fff;
+  padding:2px;
+}
+.mb-language-switcher button{
+  border:0;
+  background:transparent;
+  padding:7px 8px;
+  min-width:34px;
+  font:600 10px Arial,Helvetica,sans-serif;
+  color:#555;
+  cursor:pointer;
+}
+.mb-language-switcher button.active{
+  background:#314537;
+  color:#fff;
+}
+.mb-language-switcher button:hover:not(.active){background:#f1eee6}
+
+/* Arabic RTL: keep product imagery and brand visually sane while mirroring UI flow */
+html[dir="rtl"] body{text-align:right}
+html[dir="rtl"] .mb-language-switcher{margin-right:0;margin-left:10px}
+html[dir="rtl"] .sqm-hero-inner{direction:rtl}
+html[dir="rtl"] .sqm-market{direction:rtl}
+html[dir="rtl"] .sqm-content,
+html[dir="rtl"] .sqm-sidebar,
+html[dir="rtl"] .sqm-rightbar,
+html[dir="rtl"] .sqm-adbar{direction:rtl}
+html[dir="rtl"] input,html[dir="rtl"] textarea{text-align:right}
+html[dir="rtl"] .sqm-brand-wordmark,
+html[dir="rtl"] .sqm-brand-sub{direction:ltr}
+
+@media(max-width:900px){
+  .mb-language-switcher{margin:6px 6px 6px 0}
+  .mb-language-switcher button{padding:6px;min-width:31px}
+}
+</style>
+
+
+<style>
+/* v11.1 - Dil seçici sağ üst */
+.mb-language-switcher{
+  position:absolute!important;
+  top:3px!important;
+  right:92px!important;
+  z-index:50!important;
+  margin:0!important;
+  display:inline-flex!important;
+  width:auto!important;
+}
+
+/* Header must be the positioning reference */
+header,
+.site-header,
+.topbar,
+.header-wrap{
+  position:relative;
+}
+
+/* On narrower screens, keep it usable without colliding with account buttons */
+@media(max-width:1100px){
+  .mb-language-switcher{
+    right:12px!important;
+    top:74px!important;
+  }
+}
+@media(max-width:720px){
+  .mb-language-switcher{
+    position:static!important;
+    margin:7px 10px 7px auto!important;
+    width:max-content!important;
+  }
+}
+</style>
+
+
+<div class="mb-language-switcher" aria-label="Language">
+  <button type="button" data-lang="tr" class="active">TR</button>
+  <button type="button" data-lang="en">EN</button>
+  <button type="button" data-lang="zh">中文</button>
+  <button type="button" data-lang="ar">العربية</button>
+</div>
+<style>
+/* v11.2 - Dil seçici header sağ aksiyon grubunda */
+.mb-language-switcher{
+  position:static!important;
+  top:auto!important;
+  right:auto!important;
+  left:auto!important;
+  z-index:auto!important;
+  margin:0 10px 0 0!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  align-self:center!important;
+  width:auto!important;
+  height:34px!important;
+  box-sizing:border-box!important;
+  vertical-align:middle!important;
+}
+.mb-language-switcher button{
+  height:28px!important;
+  padding:0 7px!important;
+  min-width:31px!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+
+/* The switcher was inserted immediately before Giriş Yap.
+   Keep all header controls on the same visual baseline. */
+@media(min-width:721px){
+  .mb-language-switcher{
+    transform:none!important;
+  }
+}
+@media(max-width:720px){
+  .mb-language-switcher{
+    position:static!important;
+    margin:6px 8px 6px 0!important;
+    height:32px!important;
+  }
+}
+</style>
+
+
+<style>
+.mb-language-switcher{
+ position:static!important;
+ display:inline-flex!important;
+ align-items:center!important;
+ width:auto!important;
+ height:34px!important;
+ margin:0 10px 0 0!important;
+ padding:2px!important;
+ border:1px solid #d7d1c5!important;
+ background:#fff!important;
+ vertical-align:middle!important;
+}
+.mb-language-switcher button{
+ height:28px!important;min-width:30px!important;padding:0 6px!important;
+ display:inline-flex!important;align-items:center!important;justify-content:center!important;
+ font-size:9px!important;
+}
+@media(max-width:720px){
+ .mb-language-switcher{height:32px!important;margin:5px 6px 5px 0!important}
+ .mb-language-switcher button{min-width:27px!important;padding:0 4px!important}
+}
+</style>
+
+
+<style>
+.mb-partners{padding:26px 5%!important;border-top:1px solid #d8d3c8;background:#faf8f3}
+.mb-partners-inner{max-width:1580px;margin:0 auto}
+.mb-partners-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:16px}
+.mb-partners-head h2{margin:3px 0 4px;font:600 22px/1.2 Arial,Helvetica,sans-serif;color:#1f2921}
+.mb-partners-head p{margin:0;font-size:10px;color:#74776f}
+.mb-partner-logos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid #d9d4c9;background:#fff}
+.mb-partner-logo{min-height:76px;padding:14px 16px;border-right:1px solid #e2ddd3;display:flex;flex-direction:column;justify-content:center}
+.mb-partner-logo:last-child{border-right:0}
+.mb-partner-logo strong{font:600 13px/1.2 Arial,Helvetica,sans-serif;color:#304236}
+.mb-partner-logo span{font-size:9px;color:#8a8b84;margin-top:5px}
+.mb-partner-placeholder{background:#f5f2ea}
+@media(max-width:900px){.mb-partner-logos{grid-template-columns:repeat(2,1fr)}.mb-partner-logo:nth-child(2){border-right:0}.mb-partners-head{align-items:flex-start}}
+@media(max-width:560px){.mb-partner-logos{grid-template-columns:1fr}.mb-partner-logo{border-right:0;border-bottom:1px solid #e2ddd3}.mb-partners-head{display:block}.mb-partners-head .btn{margin-top:12px}}
+</style>
+
+
+<style>
+/* v12.1 - Üst tanıtım alanını kompaktlaştır */
+section.sqm-hero{
+  padding:0!important;
+  margin:0!important;
+  min-height:0!important;
+  height:auto!important;
+}
+.sqm-hero-inner{
+  width:calc(100% - 40px)!important;
+  max-width:1580px!important;
+  min-height:104px!important;
+  height:auto!important;
+  padding:18px 0!important;
+  margin:0 auto!important;
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) auto!important;
+  align-items:center!important;
+  gap:28px!important;
+  box-sizing:border-box!important;
+}
+.sqm-hero h1{
+  margin:0 0 5px!important;
+  font-size:27px!important;
+  line-height:1.1!important;
+}
+.sqm-hero p{
+  margin:0!important;
+  line-height:1.4!important;
+}
+.sqm-hero-actions{
+  margin:0!important;
+  align-self:center!important;
+}
+
+/* Breadcrumb da gereksiz yükseklik oluşturmasın */
+.breadcrumb,
+.breadcrumbs,
+.sqm-breadcrumb{
+  min-height:0!important;
+  margin:0!important;
+  padding-top:7px!important;
+  padding-bottom:7px!important;
+}
+
+/* İş ortakları başlığı artık sağda boş buton alanı bırakmasın */
+.mb-partners-head{
+  display:block!important;
+  margin-bottom:16px!important;
+}
+.mb-partners-head > div{
+  width:100%!important;
+}
+
+@media(max-width:720px){
+  .sqm-hero-inner{
+    width:calc(100% - 28px)!important;
+    min-height:0!important;
+    padding:16px 0!important;
+    grid-template-columns:1fr!important;
+    gap:12px!important;
+  }
+  .sqm-hero h1{font-size:24px!important}
+}
+</style>
+
+
+<style>
+/* v12.2 - gerçekten kompakt üst alan */
+section.sqm-hero{
+  display:block!important;
+  height:78px!important;
+  min-height:78px!important;
+  max-height:78px!important;
+  padding:0!important;
+  margin:0!important;
+  overflow:hidden!important;
+}
+section.sqm-hero .sqm-hero-inner{
+  width:calc(100% - 40px)!important;
+  max-width:1580px!important;
+  height:78px!important;
+  min-height:78px!important;
+  max-height:78px!important;
+  padding:0!important;
+  margin:0 auto!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:24px!important;
+  box-sizing:border-box!important;
+}
+section.sqm-hero .sqm-hero-inner > div:first-child{
+  margin:0!important;
+  padding:0!important;
+}
+section.sqm-hero h1{
+  margin:0 0 3px!important;
+  padding:0!important;
+  font-size:25px!important;
+  line-height:1.05!important;
+}
+section.sqm-hero p{
+  margin:0!important;
+  padding:0!important;
+  font-size:10px!important;
+  line-height:1.25!important;
+}
+section.sqm-hero .sqm-hero-actions{
+  margin:0!important;
+  padding:0!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:8px!important;
+}
+section.sqm-hero .sqm-hero-actions .btn{
+  min-height:34px!important;
+  height:34px!important;
+  padding:0 14px!important;
+}
+
+/* Breadcrumb is kept as a thin navigation strip only */
+.breadcrumb,
+.breadcrumbs,
+.sqm-breadcrumb{
+  height:24px!important;
+  min-height:24px!important;
+  max-height:24px!important;
+  padding:0!important;
+  margin:0!important;
+  display:flex!important;
+  align-items:center!important;
+  overflow:hidden!important;
+}
+
+/* No empty/add-company placeholder in partner strip */
+.mb-partner-placeholder{display:none!important}
+
+/* With 3 demo partners, don't leave a fake fourth cell */
+.mb-partner-logos{
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+}
+.mb-partner-logo:nth-child(3){
+  border-right:0!important;
+}
+
+@media(max-width:720px){
+  section.sqm-hero{
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+  }
+  section.sqm-hero .sqm-hero-inner{
+    width:calc(100% - 28px)!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    padding:13px 0!important;
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:10px!important;
+  }
+  .mb-partner-logos{grid-template-columns:1fr!important}
+}
+</style>
+
+
+<style>
+/* v12.3: gerçek Marble Borsa tanıtım bloğu */
+#mbRealHero{
+ height:88px!important;min-height:88px!important;max-height:88px!important;
+ padding:0!important;margin:0!important;overflow:hidden!important;
+ box-sizing:border-box!important;
+}
+#mbRealHero .sqm-hero-inner{
+ height:88px!important;min-height:88px!important;max-height:88px!important;
+ width:calc(100% - 80px)!important;max-width:1740px!important;
+ padding:0!important;margin:0 auto!important;
+ display:flex!important;align-items:center!important;justify-content:space-between!important;
+ gap:28px!important;box-sizing:border-box!important;
+}
+#mbRealHero h1{margin:0 0 4px!important;padding:0!important;font-size:25px!important;line-height:1!important}
+#mbRealHero p{margin:0!important;padding:0!important;font-size:10px!important;line-height:1.2!important}
+#mbRealHero .sqm-hero-actions{margin:0!important;padding:0!important;display:flex!important;align-items:center!important;gap:8px!important}
+#mbRealHero .sqm-hero-actions .btn{height:34px!important;min-height:34px!important;padding:0 14px!important}
+@media(max-width:720px){
+ #mbRealHero{height:auto!important;min-height:0!important;max-height:none!important}
+ #mbRealHero .sqm-hero-inner{height:auto!important;min-height:0!important;max-height:none!important;width:calc(100% - 28px)!important;padding:13px 0!important;display:grid!important;grid-template-columns:1fr!important;gap:10px!important}
+}
+</style>
+
+
+<style>
+/* v12.4 - hero tamamen kaldırıldı */
+.breadcrumb,
+.breadcrumbs,
+.sqm-breadcrumb{
+  min-height:22px!important;
+  height:22px!important;
+  max-height:22px!important;
+  margin:0!important;
+  padding:0 4px!important;
+  display:flex!important;
+  align-items:center!important;
+  box-sizing:border-box!important;
+}
+section.sqm-market{
+  margin-top:8px!important;
+}
+</style>
+
+
+<style>
+/* v12.5 - Firma rehberi: çok firma için kompakt liste */
+.mb-company-directory{
+  margin:0 0 14px 0;
+  border:1px solid #d8d1c4;
+  background:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+}
+.mb-dir-head{
+  min-height:48px;padding:8px 10px;display:flex;align-items:center;justify-content:space-between;
+  gap:12px;border-bottom:1px solid #ded8cc;background:#faf9f6;
+}
+.mb-dir-head>div:first-child{display:flex;flex-direction:column;gap:2px}
+.mb-dir-head strong{font-size:13px;color:#202820}
+.mb-dir-head span{font-size:9px;color:#777}
+.mb-dir-tools{display:flex;gap:6px}
+.mb-dir-tools input,.mb-dir-tools select{
+  height:30px;border:1px solid #d8d1c4;background:#fff;padding:0 8px;font-size:9px;color:#444;
+}
+.mb-dir-tools input{width:170px}.mb-dir-tools select{width:120px}
+.mb-dir-columns{
+  height:25px;display:grid;grid-template-columns:minmax(280px,1fr) 115px 145px;
+  align-items:center;padding:0 9px 0 73px;border-bottom:1px solid #e4dfd6;
+  background:#f4f2ed;font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#777;
+}
+.mb-dir-row{
+  min-height:52px;display:grid;grid-template-columns:28px 34px minmax(220px,1fr) 115px 68px 72px;
+  gap:8px;align-items:center;padding:5px 9px;border-bottom:1px solid #ece8df;
+}
+.mb-dir-row:last-child{border-bottom:0}
+.mb-dir-row:hover{background:#faf9f5}
+.mb-dir-no{font-size:8px;color:#aaa;text-align:center}
+.mb-dir-avatar{
+  width:32px;height:32px;display:flex;align-items:center;justify-content:center;
+  background:#efede7;color:#304438;font-size:10px;font-weight:700;
+}
+.mb-dir-main{min-width:0;display:flex;flex-direction:column;gap:3px}
+.mb-dir-main strong{font-size:10.5px;color:#161b17;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mb-dir-main span{font-size:8.5px;color:#777;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mb-dir-verified,.mb-dir-standard{display:inline-block;font-size:8px;padding:3px 5px;white-space:nowrap}
+.mb-dir-verified{border:1px solid #bdd2c2;background:#eef5ef;color:#365640;font-weight:700}
+.mb-dir-standard{border:1px solid #ddd8ce;background:#f7f5f0;color:#777}
+.mb-dir-link,.mb-dir-quote{
+  height:28px;border:1px solid #d6d0c5;background:#fff;font-size:8.5px;font-weight:700;cursor:pointer;
+}
+.mb-dir-quote{background:#304438;border-color:#304438;color:#fff}
+.mb-dir-link:hover{background:#f3f1ec}
+.mb-dir-quote:hover{filter:brightness(.94)}
+
+/* Firma panelindeki eski üç dev kartı gizle. Yeni liste onların yerini alıyor. */
+#panel-firms .supplier-list,
+#panel-firms .supplier-stack,
+#panel-firms .firm-list{
+  display:none!important;
+}
+
+/* If old cards use generic .supplier-card, hide only within the firms panel. */
+#panel-firms .supplier-card{display:none!important}
+
+@media(max-width:760px){
+ .mb-dir-head{align-items:flex-start;flex-direction:column}
+ .mb-dir-tools{width:100%}.mb-dir-tools input{flex:1}.mb-dir-tools select{width:110px}
+ .mb-dir-columns{display:none}
+ .mb-dir-row{grid-template-columns:26px 32px minmax(0,1fr) 64px}
+ .mb-dir-status{display:none}.mb-dir-link{display:none}
+ .mb-dir-quote{width:64px}
+}
+</style>
+
+
+<style>
+/* v12.6 - firma listesi metin taşması düzeltmesi */
+.mb-dir-row{height:52px!important;min-height:52px!important;max-height:52px!important;overflow:hidden!important}
+.mb-dir-main{overflow:hidden!important;min-width:0!important}
+.mb-dir-main strong,.mb-dir-main span{
+ display:block!important;max-width:100%!important;white-space:nowrap!important;
+ overflow:hidden!important;text-overflow:ellipsis!important;line-height:1.2!important;
+}
+.mb-dir-status{overflow:hidden!important;white-space:nowrap!important}
+.mb-dir-verified,.mb-dir-standard{max-width:105px!important;overflow:hidden!important;text-overflow:ellipsis!important}
+</style>
+
+
+<style>
+/* v12.7 - Firma doğrulama metni artık dar kolona sıkışmaz */
+#panel-firms .mb-verification-info{
+  grid-column:1 / -1!important;
+  width:100%!important;
+  max-width:none!important;
+  box-sizing:border-box!important;
+  padding:14px 16px!important;
+  margin:0!important;
+  display:block!important;
+  overflow:visible!important;
+}
+#panel-firms .mb-verification-info h3{
+  margin:0 0 8px!important;
+  font-size:13px!important;
+  line-height:1.25!important;
+}
+#panel-firms .mb-verification-info p,
+#panel-firms .mb-verification-info li{
+  font-size:10px!important;
+  line-height:1.55!important;
+  white-space:normal!important;
+  word-break:normal!important;
+  overflow-wrap:normal!important;
+}
+#panel-firms .mb-verification-info ul{
+  margin:8px 0 10px 18px!important;
+  padding:0!important;
+}
+#panel-firms .mb-verification-info .verified-note{
+  width:100%!important;
+  box-sizing:border-box!important;
+}
+
+/* Hizmet kartları gerçek button ve tamamı tıklanabilir */
+.mb-services-grid{align-items:stretch!important}
+.mb-service-card{
+  appearance:none!important;
+  -webkit-appearance:none!important;
+  width:100%!important;
+  min-height:118px!important;
+  text-align:left!important;
+  cursor:pointer!important;
+  font-family:inherit!important;
+  color:inherit!important;
+  background:#fff!important;
+}
+.mb-service-card:hover{
+  border-color:#788c7b!important;
+  background:#fafbf8!important;
+}
+.mb-service-card h3{margin:0 0 7px!important}
+.mb-service-card p{margin:0 0 12px!important}
+.mb-service-open{
+  display:block;
+  margin-top:auto;
+  font-size:9px;
+  font-weight:700;
+  color:#304438;
+}
+html[dir="rtl"] .mb-service-card{text-align:right!important}
+</style>
+
+
+<style>
+/* v12.8 - hizmet kartının tamamı ve Detayları Gör alanı tıklanabilir */
+.mb-service-card{
+  position:relative!important;
+  cursor:pointer!important;
+}
+.mb-service-card h3,
+.mb-service-card p,
+.mb-service-card .mb-service-open{
+  pointer-events:none!important;
+}
+.mb-service-open{
+  display:inline-flex!important;
+  align-items:center!important;
+  min-height:30px!important;
+  padding:0 8px!important;
+  margin:6px 0 0 -8px!important;
+  cursor:pointer!important;
+}
+.mb-service-card:hover .mb-service-open{
+  text-decoration:underline;
+}
+.mb-service-card:focus-visible{
+  outline:2px solid #304438!important;
+  outline-offset:2px!important;
+}
+</style>
+
+
+<style>
+#mbServiceModal{z-index:9999!important}
+#mbServiceModal.show{display:flex!important}
+#mbServiceModal .modal-card{
+  width:min(620px,calc(100% - 32px))!important;
+  max-height:86vh!important;
+  overflow:auto!important;
+  background:#fff!important;
+  border:1px solid #d8d1c4!important;
+  border-radius:6px!important;
+  padding:20px!important;
+  box-sizing:border-box!important;
+}
+</style>
+
+</head>
 <body>
 <div class="top">
 <span>Türkiye doğal taş sektörünü  alıcılarla buluşturan B2B teklif platformu</span>
@@ -2335,8 +3151,8 @@ footer{
 </div>
 <header>
 <div class="brand-wrap">
-<div class="logo">Stone <span>Quote Market</span></div>
-<div class="brand-note">Natural Stone B2B</div>
+<div class="logo">Marble <span>Borsa</span></div>
+<div class="brand-note"><span class="sqm-brand-wordmark">Marble Borsa</span><small class="sqm-brand-sub">Natural Stone B2B</small></div>
 </div>
 <nav class="main-nav">
 <a href="#directory">Doğal Taş</a>
@@ -2346,29 +3162,12 @@ footer{
 <a href="#services">Hizmetler</a>
 </nav>
 <div class="actions" id="headerActions">
+<button class="btn demo-login-btn" type="button" onclick="demoLogin()">Demo Giriş</button>
 <button class="btn outline" onclick="openAuth('login')">Giriş</button>
 <button class="btn primary" onclick="openAuth('register')">Firma Ekle</button>
 </div>
 </header>
-<section class="hero">
-<div class="portal-utility">
-<span>Türkiye Doğal Taş Pazarı</span>
-<span class="dot">•</span>
-<a href="#marketArea">Kategoriler</a>
-<span class="dot">•</span>
-<a href="#" onclick="openAuth('login');return false;">Üye Girişi</a>
-</div>
-<div class="sqm-hero-inner">
-<div class="sqm-hero-copy">
-<h1>Stone Quote Market</h1>
-<p>Doğal taş ürünleri, üreticiler ve güncel alım talepleri.</p>
-</div>
-<div class="sqm-hero-actions">
-<button class="btn outline" data-market-open="panel-requests">Alım Talepleri</button>
-<button class="btn primary" onclick="openAuth('register')">Firma Kaydı</button>
-</div>
-</div>
-</section>
+
 <section class="sqm-market" id="marketArea">
 <aside aria-label="Reklam Alanı" class="sqm-adbar">
 <div class="ad-label">REKLAM</div>
@@ -2376,7 +3175,7 @@ footer{
 <span class="ad-badge">TEST REKLAM</span>
 <strong>Furkan Karasu</strong>
 <span>Doğal taş sektörü için reklam alanı</span>
-<small>stonequotemarket.com</small>
+<small>marbleborsa.com</small>
 </a>
 <a class="ad-card" href="#" onclick="return false;">
 <span class="ad-badge">TEST</span>
@@ -2398,6 +3197,9 @@ footer{
 <button class="sqm-side-tab" data-market-tab="panel-supplies">Makine ve Sarf <span>›</span></button>
 <button class="sqm-side-tab" data-market-tab="panel-services">Hizmetler <span>›</span></button>
 <div class="sqm-side-sep"></div>
+
+
+
 <button class="sqm-side-link" onclick="openAuth('login')">Giriş Yap</button>
 <button class="sqm-side-link" onclick="openAuth('register')">Firma Kaydı</button>
 </aside>
@@ -2474,11 +3276,235 @@ footer{
 </div>
 <div class="verified-box">
 <div class="verified-mark">✓</div>
-<div>
+
+<div class="mb-company-directory">
+  <div class="mb-dir-head">
+    <div><strong>Firma Rehberi</strong><span>30 firma listeleniyor</span></div>
+    <div class="mb-dir-tools">
+      <input type="search" id="mbCompanySearch" placeholder="Firma ara">
+      <select id="mbCompanyCity"><option value="">Tüm şehirler</option><option>Afyonkarahisar</option><option>İzmir</option><option>Denizli</option><option>Burdur</option><option>Bilecik</option></select>
+    </div>
+  </div>
+  <div class="mb-dir-columns"><span>Firma</span><span>Durum</span><span>İşlem</span></div>
+  <div class="mb-dir-list">
+    <div class="mb-dir-row">
+      <div class="mb-dir-no">01</div>
+      <div class="mb-dir-avatar">AM</div>
+      <div class="mb-dir-main"><strong>Artemis Marble Co.</strong><span>Ocak + Fabrika · İscehisar · Afyonkarahisar</span></div>
+      <div class="mb-dir-status"><span class="mb-dir-verified">✓ Doğrulanmış</span></div>
+      <button class="mb-dir-link" type="button">Profili Gör</button>
+      <button class="mb-dir-quote" type="button" onclick="goToRequest('Artemis Marble Co.')">Teklif Al</button>
+    </div><div class="mb-dir-row">
+      <div class="mb-dir-no">02</div>
+      <div class="mb-dir-avatar">NS</div>
+      <div class="mb-dir-main"><strong>Nexa Stone Industries</strong><span>Fabrika · Afyonkarahisar</span></div>
+      <div class="mb-dir-status"><span class="mb-dir-verified">✓ Doğrulanmış</span></div>
+      <button class="mb-dir-link" type="button">Profili Gör</button>
+      <button class="mb-dir-quote" type="button" onclick="goToRequest('Nexa Stone Industries')">Teklif Al</button>
+    </div><div class="mb-dir-row">
+      <div class="mb-dir-no">03</div>
+      <div class="mb-dir-avatar">AN</div>
+      <div class="mb-dir-main"><strong>Averon Natural Stone</strong><span>Ocak · İscehisar · Afyonkarahisar</span></div>
+      <div class="mb-dir-status"><span class="mb-dir-verified">✓ Doğrulanmış</span></div>
+      <button class="mb-dir-link" type="button">Profili Gör</button>
+      <button class="mb-dir-quote" type="button" onclick="goToRequest('Averon Natural Stone')">Teklif Al</button>
+    </div><div class="mb-dir-row">
+      <div class="mb-dir-no">04</div>
+      <div class="mb-dir-avatar">AS</div>
+      <div class="mb-dir-main"><strong>Anatolia Stone Export</strong><span>İhracatçı / Tedarikçi · Afyonkarahisar</span></div>
+      <div class="mb-dir-status"><span class="mb-dir-verified">✓ Doğrulanmış</span></div>
+      <button class="mb-dir-link" type="button">Profili Gör</button>
+      <button class="mb-dir-quote" type="button" onclick="goToRequest('Anatolia Stone Export')">Teklif Al</button>
+    </div><div class="mb-dir-row">
+      <div class="mb-dir-no">05</div>
+      <div class="mb-dir-avatar">AS</div>
+      <div class="mb-dir-main"><strong>Afyon Stone Works</strong><span>Fabrika · İscehisar · Afyonkarahisar</span></div>
+      <div class="mb-dir-status"><span class="mb-dir-verified">✓ Doğrulanmış</span></div>
+      <button class="mb-dir-link" type="button">Profili Gör</button>
+      <button class="mb-dir-quote" type="button" onclick="goToRequest('Afyon Stone Works')">Teklif Al</button>
+    </div><div class="mb-dir-row">
+      <div class="mb-dir-no">06</div>
+      <div class="mb-dir-avatar">EM</div>
+      <div class="mb-dir-main"><strong>Ege Marble Industries</strong><span>Fabrika + İhracat · İzmir</span></div>
+      <div class="mb-dir-status"><span class="mb-dir-verified">✓ Doğrulanmış</span></div>
+      <button class="mb-dir-link" type="button">Profili Gör</button>
+      <button class="mb-dir-quote" type="button" onclick="goToRequest('Ege Marble Industries')">Teklif Al</button>
+    </div><div class="mb-dir-row">
+      <div class="mb-dir-no">07</div>
+      <div class="mb-dir-avatar">MN</div>
+      <div class="mb-dir-main"><strong>Marmara Natural Stone</strong><span>Ocak + Fabrika · Balıkesir</span></div>
+      <div class="mb-dir-status"><span class="mb-dir-verified">✓ Doğrulanmış</span></div>
+      <button class="mb-dir-link" type="button">Profili Gör</button>
+      <button class="mb-dir-quote" type="button" onclick="goToRequest('Marmara Natural Stone')">Teklif Al</button>
+    </div><div class="mb-dir-row">
+      <div class="mb-dir-no">08</div>
+      <div class="mb-dir-avatar">BB</div>
+      <div class="mb-dir-main"><strong>Burdur Beige Stone</strong><span>Ocak · Burdur</span></div>
+      <div class="mb-dir-status"><span class="mb-dir-verified">✓ Doğrulanmış</span></div>
+      <button class="mb-dir-link" type="button">Profili Gör</button>
+      <button class="mb-dir-quote" type="button" onclick="goToRequest('Burdur Beige Stone')">Teklif Al</button>
+    </div><div class="mb-dir-row">
+      <div class="mb-dir-no">09</div>
+      <div class="mb-dir-avatar">DT</div>
+      <div class="mb-dir-main"><strong>Denizli Travertine Co.</strong><span>Ocak + Fabrika · Denizli</span></div>
+      <div class="mb-dir-status"><span class="mb-dir-verified">✓ Doğrulanmış</span></div>
+      <button class="mb-dir-link" type="button">Profili Gör</button>
+      <button class="mb-dir-quote" type="button" onclick="goToRequest('Denizli Travertine Co.')">Teklif Al</button>
+    </div><div class="mb-dir-row">
+      <div class="mb-dir-no">10</div>
+      <div class="mb-dir-avatar">AS</div>
+      <div class="mb-dir-main"><strong>Aegean Stone Trade</strong><span>İhracatçı / Tedarikçi · İzmir</span></div>
+      <div class="mb-dir-status"><span class="mb-dir-verified">✓ Doğrulanmış</span></div>
+      <button class="mb-dir-link" type="button">Profili Gör</button>
+      <button class="mb-dir-quote" type="button" onclick="goToRequest('Aegean Stone Trade')">Teklif Al</button>
+    </div><div class="mb-dir-row">
+      <div class="mb-dir-no">11</div>
+      <div class="mb-dir-avatar">AM</div>
+      <div class="mb-dir-main"><strong>Anka Marble</strong><span>Fabrika · Afyonkarahisar</span></div>
+      <div class="mb-dir-status"><span class="mb-dir-verified">✓ Doğrulanmış</span></div>
+      <button class="mb-dir-link" type="button">Profili Gör</button>
+      <button class="mb-dir-quote" type="button" onclick="goToRequest('Anka Marble')">Teklif Al</button>
+    </div><div class="mb-dir-row">
+      <div class="mb-dir-no">12</div>
+      <div class="mb-dir-avatar">SS</div>
+      <div class="mb-dir-main"><strong>Sultan Stone</strong><span>Ocak · İscehisar · Afyonkarahisar</span></div>
+      <div class="mb-dir-status"><span class="mb-dir-verified">✓ Doğrulanmış</span></div>
+      <button class="mb-dir-link" type="button">Profili Gör</button>
+      <button class="mb-dir-quote" type="button" onclick="goToRequest('Sultan Stone')">Teklif Al</button>
+    </div><div class="mb-dir-row">
+      <div class="mb-dir-no">13</div>
+      <div class="mb-dir-avatar">AN</div>
+      <div class="mb-dir-main"><strong>Atlas Natural Stone</strong><span>Fabrika · Afyonkarahisar</span></div>
+      <div class="mb-dir-status"><span class="mb-dir-verified">✓ Doğrulanmış</span></div>
+      <button class="mb-dir-link" type="button">Profili Gör</button>
+      <button class="mb-dir-quote" type="button" onclick="goToRequest('Atlas Natural Stone')">Teklif Al</button>
+    </div><div class="mb-dir-row">
+      <div class="mb-dir-no">14</div>
+      <div class="mb-dir-avatar">MM</div>
+      <div class="mb-dir-main"><strong>Mira Marble Export</strong><span>İhracatçı · İstanbul</span></div>
+      <div class="mb-dir-status"><span class="mb-dir-verified">✓ Doğrulanmış</span></div>
+      <button class="mb-dir-link" type="button">Profili Gör</button>
+      <button class="mb-dir-quote" type="button" onclick="goToRequest('Mira Marble Export')">Teklif Al</button>
+    </div><div class="mb-dir-row">
+      <div class="mb-dir-no">15</div>
+      <div class="mb-dir-avatar">NS</div>
+      <div class="mb-dir-main"><strong>Nova Stone Türkiye</strong><span>Tedarikçi · Afyonkarahisar</span></div>
+      <div class="mb-dir-status"><span class="mb-dir-verified">✓ Doğrulanmış</span></div>
+      <button class="mb-dir-link" type="button">Profili Gör</button>
+      <button class="mb-dir-quote" type="button" onclick="goToRequest('Nova Stone Türkiye')">Teklif Al</button>
+    </div><div class="mb-dir-row">
+      <div class="mb-dir-no">16</div>
+      <div class="mb-dir-avatar">AM</div>
+      <div class="mb-dir-main"><strong>Anadolu Mermer</strong><span>Ocak + Fabrika · Bilecik</span></div>
+      <div class="mb-dir-status"><span class="mb-dir-verified">✓ Doğrulanmış</span></div>
+      <button class="mb-dir-link" type="button">Profili Gör</button>
+      <button class="mb-dir-quote" type="button" onclick="goToRequest('Anadolu Mermer')">Teklif Al</button>
+    </div><div class="mb-dir-row">
+      <div class="mb-dir-no">17</div>
+      <div class="mb-dir-avatar">ES</div>
+      <div class="mb-dir-main"><strong>Ephesus Stone</strong><span>Fabrika · İzmir</span></div>
+      <div class="mb-dir-status"><span class="mb-dir-verified">✓ Doğrulanmış</span></div>
+      <button class="mb-dir-link" type="button">Profili Gör</button>
+      <button class="mb-dir-quote" type="button" onclick="goToRequest('Ephesus Stone')">Teklif Al</button>
+    </div><div class="mb-dir-row">
+      <div class="mb-dir-no">18</div>
+      <div class="mb-dir-avatar">PT</div>
+      <div class="mb-dir-main"><strong>Pamukkale Travertine</strong><span>Ocak · Denizli</span></div>
+      <div class="mb-dir-status"><span class="mb-dir-verified">✓ Doğrulanmış</span></div>
+      <button class="mb-dir-link" type="button">Profili Gör</button>
+      <button class="mb-dir-quote" type="button" onclick="goToRequest('Pamukkale Travertine')">Teklif Al</button>
+    </div><div class="mb-dir-row">
+      <div class="mb-dir-no">19</div>
+      <div class="mb-dir-avatar">MW</div>
+      <div class="mb-dir-main"><strong>Marmara White Stone</strong><span>Ocak · Marmara Adası · Balıkesir</span></div>
+      <div class="mb-dir-status"><span class="mb-dir-standard">Firma</span></div>
+      <button class="mb-dir-link" type="button">Profili Gör</button>
+      <button class="mb-dir-quote" type="button" onclick="goToRequest('Marmara White Stone')">Teklif Al</button>
+    </div><div class="mb-dir-row">
+      <div class="mb-dir-no">20</div>
+      <div class="mb-dir-avatar">BB</div>
+      <div class="mb-dir-main"><strong>Bilecik Beige Co.</strong><span>Fabrika · Bilecik</span></div>
+      <div class="mb-dir-status"><span class="mb-dir-standard">Firma</span></div>
+      <button class="mb-dir-link" type="button">Profili Gör</button>
+      <button class="mb-dir-quote" type="button" onclick="goToRequest('Bilecik Beige Co.')">Teklif Al</button>
+    </div><div class="mb-dir-row">
+      <div class="mb-dir-no">21</div>
+      <div class="mb-dir-avatar">MW</div>
+      <div class="mb-dir-main"><strong>Muğla White Marble</strong><span>Ocak + Fabrika · Muğla</span></div>
+      <div class="mb-dir-status"><span class="mb-dir-standard">Firma</span></div>
+      <button class="mb-dir-link" type="button">Profili Gör</button>
+      <button class="mb-dir-quote" type="button" onclick="goToRequest('Muğla White Marble')">Teklif Al</button>
+    </div><div class="mb-dir-row">
+      <div class="mb-dir-no">22</div>
+      <div class="mb-dir-avatar">İM</div>
+      <div class="mb-dir-main"><strong>İscehisar Marble</strong><span>Fabrika · İscehisar · Afyonkarahisar</span></div>
+      <div class="mb-dir-status"><span class="mb-dir-standard">Firma</span></div>
+      <button class="mb-dir-link" type="button">Profili Gör</button>
+      <button class="mb-dir-quote" type="button" onclick="goToRequest('İscehisar Marble')">Teklif Al</button>
+    </div><div class="mb-dir-row">
+      <div class="mb-dir-no">23</div>
+      <div class="mb-dir-avatar">AS</div>
+      <div class="mb-dir-main"><strong>Akropol Stone</strong><span>İhracatçı · Afyonkarahisar</span></div>
+      <div class="mb-dir-status"><span class="mb-dir-standard">Firma</span></div>
+      <button class="mb-dir-link" type="button">Profili Gör</button>
+      <button class="mb-dir-quote" type="button" onclick="goToRequest('Akropol Stone')">Teklif Al</button>
+    </div><div class="mb-dir-row">
+      <div class="mb-dir-no">24</div>
+      <div class="mb-dir-avatar">EM</div>
+      <div class="mb-dir-main"><strong>Eksen Marble</strong><span>Fabrika · Afyonkarahisar</span></div>
+      <div class="mb-dir-status"><span class="mb-dir-standard">Firma</span></div>
+      <button class="mb-dir-link" type="button">Profili Gör</button>
+      <button class="mb-dir-quote" type="button" onclick="goToRequest('Eksen Marble')">Teklif Al</button>
+    </div><div class="mb-dir-row">
+      <div class="mb-dir-no">25</div>
+      <div class="mb-dir-avatar">DN</div>
+      <div class="mb-dir-main"><strong>Doruk Natural Stone</strong><span>Tedarikçi · Burdur</span></div>
+      <div class="mb-dir-status"><span class="mb-dir-standard">Firma</span></div>
+      <button class="mb-dir-link" type="button">Profili Gör</button>
+      <button class="mb-dir-quote" type="button" onclick="goToRequest('Doruk Natural Stone')">Teklif Al</button>
+    </div><div class="mb-dir-row">
+      <div class="mb-dir-no">26</div>
+      <div class="mb-dir-avatar">LS</div>
+      <div class="mb-dir-main"><strong>Likya Stone</strong><span>Fabrika · Antalya</span></div>
+      <div class="mb-dir-status"><span class="mb-dir-standard">Firma</span></div>
+      <button class="mb-dir-link" type="button">Profili Gör</button>
+      <button class="mb-dir-quote" type="button" onclick="goToRequest('Likya Stone')">Teklif Al</button>
+    </div><div class="mb-dir-row">
+      <div class="mb-dir-no">27</div>
+      <div class="mb-dir-avatar">EM</div>
+      <div class="mb-dir-main"><strong>Efes Marble</strong><span>İhracatçı · İzmir</span></div>
+      <div class="mb-dir-status"><span class="mb-dir-standard">Firma</span></div>
+      <button class="mb-dir-link" type="button">Profili Gör</button>
+      <button class="mb-dir-quote" type="button" onclick="goToRequest('Efes Marble')">Teklif Al</button>
+    </div><div class="mb-dir-row">
+      <div class="mb-dir-no">28</div>
+      <div class="mb-dir-avatar">KS</div>
+      <div class="mb-dir-main"><strong>Kaplan Stone</strong><span>Ocak · Afyonkarahisar</span></div>
+      <div class="mb-dir-status"><span class="mb-dir-standard">Firma</span></div>
+      <button class="mb-dir-link" type="button">Profili Gör</button>
+      <button class="mb-dir-quote" type="button" onclick="goToRequest('Kaplan Stone')">Teklif Al</button>
+    </div><div class="mb-dir-row">
+      <div class="mb-dir-no">29</div>
+      <div class="mb-dir-avatar">AB</div>
+      <div class="mb-dir-main"><strong>Anatolian Blocks</strong><span>Blok Tedarikçisi · Afyonkarahisar</span></div>
+      <div class="mb-dir-status"><span class="mb-dir-standard">Firma</span></div>
+      <button class="mb-dir-link" type="button">Profili Gör</button>
+      <button class="mb-dir-quote" type="button" onclick="goToRequest('Anatolian Blocks')">Teklif Al</button>
+    </div><div class="mb-dir-row">
+      <div class="mb-dir-no">30</div>
+      <div class="mb-dir-avatar">TS</div>
+      <div class="mb-dir-main"><strong>Türkiye Stone Supply</strong><span>İhracatçı / Tedarikçi · İstanbul</span></div>
+      <div class="mb-dir-status"><span class="mb-dir-standard">Firma</span></div>
+      <button class="mb-dir-link" type="button">Profili Gör</button>
+      <button class="mb-dir-quote" type="button" onclick="goToRequest('Türkiye Stone Supply')">Teklif Al</button>
+    </div>
+  </div>
+</div>
+<div class="mb-verification-info">
 <h3>Firma doğrulaması</h3>
-<p>Bu rozet, firmanın kimliğinin ve temel kurumsal bilgilerinin Stone Quote Market tarafından kontrol edildiğini gösterir.</p>
+<p>Bu rozet, firmanın kimliğinin ve temel kurumsal bilgilerinin Marble Borsa tarafından kontrol edildiğini gösterir.</p>
 <ul><li>Firma unvanı ve iletişim bilgilerinin kontrolü</li><li>Vergi levhası, ticaret sicili veya faaliyet belgesi gibi kurumsal belgelerin incelenmesi</li><li>Yetkili kişi bilgilerinin firma bilgileriyle eşleştirilmesi</li><li>Kurumsal e-posta, telefon veya web sitesi bilgilerinin kontrolü</li><li>Gerekli görüldüğünde yeniden doğrulama talep edilmesi</li></ul>
-<div class="verified-note"><strong>Önemli: </strong>Doğrulanmış Firma rozeti yalnızca firma kimliği ve kurumsal bilgilerin kontrol edildiğini gösterir. Ürün kalitesi, fiyat, stok, ödeme, teslimat veya ticari yükümlülükler için Stone Quote Market garantisi anlamına gelmez.</div>
+<div class="verified-note"><strong>Önemli: </strong>Doğrulanmış Firma rozeti yalnızca firma kimliği ve kurumsal bilgilerin kontrol edildiğini gösterir. Ürün kalitesi, fiyat, stok, ödeme, teslimat veya ticari yükümlülükler için Marble Borsa garantisi anlamına gelmez.</div>
 </div>
 </div>
 </section></div>
@@ -2506,10 +3532,14 @@ footer{
 <p>Soket, testere, elmas tel, makine veya sarf malzemesi ihtiyacınızı belirtin. Uygun tedarikçiler size teklif versin.</p>
 </div>
 <div class="grid cols4">
-<div class="card"><h3>Elmas Soket</h3><p>Kesim uygulamalarına uygun segment tedarikçileri.</p><button class="btn outline" onclick="goToRequest('Elmas Soket')">Teklif Al</button></div>
-<div class="card"><h3>Elmas Testere</h3><p>Blok kesim ve plaka üretimi için testere üreticileri.</p><button class="btn outline" onclick="goToRequest('Elmas Testere')">Teklif Al</button></div>
-<div class="card"><h3>Elmas Tel</h3><p>Ocak ve fabrika uygulamaları için elmas tel.</p><button class="btn outline" onclick="goToRequest('Elmas Tel')">Teklif Al</button></div>
+<div class="card"><h3>Elmas &amp; Kesiciler</h3><p>Elmas soket, testere, tel ve doğal taş kesim ekipmanları.</p><button class="btn outline" onclick="goToRequest('Elmas ve Kesiciler')">Teklif Al</button></div>
 <div class="card"><h3>Taş İşleme Makineleri</h3><p>Kesim, cila, köprü kesim ve CNC ekipmanları.</p><button class="btn outline" onclick="goToRequest('Taş İşleme Makinesi')">Teklif Al</button></div>
+<div class="card"><h3>Forklift &amp; İş Makineleri</h3><p>Fabrika, ocak ve stok sahaları için forklift, yükleyici ve iş makineleri.</p><button class="btn outline" onclick="goToRequest('Forklift ve İş Makineleri')">Teklif Al</button></div>
+<div class="card"><h3>Paketleme &amp; Kesme</h3><p>Kesim yardımcıları, ambalaj, kasa ve sevkiyata hazırlık ekipmanları.</p><button class="btn outline" onclick="goToRequest('Paketleme ve Kesme')">Teklif Al</button></div>
+<div class="card"><h3>Aşındırıcı &amp; Cila</h3><p>Yüzey işleme, parlatma ve finisaj sarf malzemeleri.</p><button class="btn outline" onclick="goToRequest('Aşındırıcı ve Cila')">Teklif Al</button></div>
+<div class="card"><h3>Kesici Takımlar</h3><p>Atölye ve fabrika uygulamaları için profesyonel kesici takımlar.</p><button class="btn outline" onclick="goToRequest('Kesici Takımlar')">Teklif Al</button></div>
+<div class="card"><h3>Sarf Malzemeleri</h3><p>Doğal taş üretiminde kullanılan günlük üretim sarfları.</p><button class="btn outline" onclick="goToRequest('Sarf Malzemeleri')">Teklif Al</button></div>
+<div class="card"><h3>Paketleme Malzemeleri</h3><p>Ahşap kasa, koruyucu malzeme ve ihracat paketleme ürünleri.</p><button class="btn outline" onclick="goToRequest('Paketleme Malzemeleri')">Teklif Al</button></div>
 </div>
 </section></div>
 </div>
@@ -2522,12 +3552,35 @@ footer{
 <div><span class="eyebrow">HİZMETLER</span><h2>Hizmetler</h2></div>
 <p>Lojistik, forwarder, gümrük müşavirliği, gemi acentesi, fumigasyon, ekspertiz, kalite kontrol, paketleme ve sigorta hizmetlerine tek yerden ulaşın.</p>
 </div>
-<div class="grid cols4">
-<div class="card"><h3>Lojistik &amp; Nakliye</h3><p>Fabrika, liman ve proje sahası taşımaları.</p></div>
-<div class="card"><h3>Gümrük Müşavirliği</h3><p>İhracat ve ithalat gümrük süreçleri.</p></div>
-<div class="card"><h3>Ekspertiz &amp; Kalite Kontrol</h3><p>Yükleme öncesi ürün ve paket kontrolü.</p></div>
-<div class="card"><h3>Paketleme &amp; Sandıklama</h3><p>Doğal taş sevkiyatına uygun ahşap kasa çözümleri.</p></div>
-<div class="card"><h3>Fumigasyon &amp; Konteyner İlaçlama</h3><p>Konteyner, ahşap ambalaj ve ihracat yükleri için fumigasyon ve karantina hizmeti veren firmalar.</p></div><div class="card"><h3>Gemi Acenteleri</h3><p>Liman operasyonu, evrak, gemi acenteliği ve yükleme süreçleri.</p></div></div>
+<div class="grid cols4 mb-services-grid">
+<button class="card mb-service-card" type="button" data-service-name="Lojistik & Nakliye" onclick="openMbService('Lojistik & Nakliye')">
+<h3>Lojistik & Nakliye</h3><p>Fabrika, liman ve proje sahası taşımaları.</p><span class="mb-service-open">Detayları Gör ›</span>
+</button>
+<button class="card mb-service-card" type="button" data-service-name="Gümrük Müşavirliği" onclick="openMbService('Gümrük Müşavirliği')">
+<h3>Gümrük Müşavirliği</h3><p>İhracat ve ithalat gümrük süreçleri.</p><span class="mb-service-open">Detayları Gör ›</span>
+</button>
+<button class="card mb-service-card" type="button" data-service-name="Forwarder & Navlun" onclick="openMbService('Forwarder & Navlun')">
+<h3>Forwarder & Navlun</h3><p>Denizyolu ve multimodal taşımalarda navlun ve rezervasyon desteği.</p><span class="mb-service-open">Detayları Gör ›</span>
+</button>
+<button class="card mb-service-card" type="button" data-service-name="Ekspertiz & Kalite Kontrol" onclick="openMbService('Ekspertiz & Kalite Kontrol')">
+<h3>Ekspertiz & Kalite Kontrol</h3><p>Yükleme öncesi ürün, ölçü ve paket kontrolü.</p><span class="mb-service-open">Detayları Gör ›</span>
+</button>
+<button class="card mb-service-card" type="button" data-service-name="Paketleme & Sandıklama" onclick="openMbService('Paketleme & Sandıklama')">
+<h3>Paketleme & Sandıklama</h3><p>Doğal taş sevkiyatına uygun ahşap kasa çözümleri.</p><span class="mb-service-open">Detayları Gör ›</span>
+</button>
+<button class="card mb-service-card" type="button" data-service-name="Nakliyat Sigortası" onclick="openMbService('Nakliyat Sigortası')">
+<h3>Nakliyat Sigortası</h3><p>Yurt içi ve uluslararası yükler için taşıma sigortası.</p><span class="mb-service-open">Detayları Gör ›</span>
+</button>
+<button class="card mb-service-card" type="button" data-service-name="Dış Ticaret Desteği" onclick="openMbService('Dış Ticaret Desteği')">
+<h3>Dış Ticaret Desteği</h3><p>İhracat evrakları ve dış ticaret operasyon desteği.</p><span class="mb-service-open">Detayları Gör ›</span>
+</button>
+<button class="card mb-service-card" type="button" data-service-name="Gemi Acenteleri" onclick="openMbService('Gemi Acenteleri')">
+<h3>Gemi Acenteleri</h3><p>Liman operasyonu, evrak, gemi acenteliği ve yükleme süreçleri.</p><span class="mb-service-open">Detayları Gör ›</span>
+</button>
+<button class="card mb-service-card" type="button" data-service-name="Fumigasyon & Konteyner İlaçlama" onclick="openMbService('Fumigasyon & Konteyner İlaçlama')">
+<h3>Fumigasyon & Konteyner İlaçlama</h3><p>Konteyner, ahşap ambalaj ve ihracat yükleri için fumigasyon hizmetleri.</p><span class="mb-service-open">Detayları Gör ›</span>
+</button>
+</div>
 </section></div>
 </div>
 </div>
@@ -2541,27 +3594,27 @@ footer{
 <div class="new-box">
 <div class="new-box-head">
 <strong>Yeni Eklenenler</strong>
-<a href="#directory">Tümü</a>
+<a href="#directory" data-market-open="panel-stones">Tümü</a>
 </div>
 <div class="new-tabs">
-<button class="active" type="button">Ürünler</button>
-<button type="button">Firmalar</button>
-<button type="button">Talepler</button>
+<button class="active" type="button" data-market-open="panel-stones">Ürünler</button>
+<button type="button" data-market-open="panel-firms">Firmalar</button>
+<button type="button" data-market-open="panel-requests">Talepler</button>
 </div>
 <div class="new-list">
-<a class="new-item" href="#directory">
+<a class="new-item" href="#directory" data-recent-stone="Afyon White">
 <span class="new-thumb afyon-white"></span>
 <span class="new-copy"><small>AFYONKARAHİSAR</small><b>Afyon White</b><em>Plaka · 20/30 mm</em></span>
 </a>
-<a class="new-item" href="#directory">
+<a class="new-item" href="#directory" data-recent-stone="Afyon Violet">
 <span class="new-thumb afyon-violet"></span>
 <span class="new-copy"><small>AFYONKARAHİSAR</small><b>Afyon Violet</b><em>Blok · Plaka</em></span>
 </a>
-<a class="new-item" href="#directory">
+<a class="new-item" href="#directory" data-recent-stone="Burdur Beige">
 <span class="new-thumb burdur-beige"></span>
 <span class="new-copy"><small>BURDUR</small><b>Burdur Beige</b><em>Plaka · Ebatlı</em></span>
 </a>
-<a class="new-item" href="#directory">
+<a class="new-item" href="#directory" data-recent-stone="Marmara White">
 <span class="new-thumb marmara"></span>
 <span class="new-copy"><small>MARMARA</small><b>Marmara White</b><em>Plaka · Ebatlı</em></span>
 </a>
@@ -2573,7 +3626,7 @@ footer{
 <div class="side-ad-inner">
 <b>Furkan Karasu</b>
 <span>Test reklam alanı</span>
-<small>Stone Quote Market</small>
+<small>Marble Borsa</small>
 </div>
 </div>
 </aside>
@@ -2682,11 +3735,30 @@ footer{
 <button onclick="openLegal('termsModal')">Kullanım Koşulları</button>
 </div>
 </section>
+
+<section class="mb-partners" id="partners">
+  <div class="mb-partners-inner">
+    <div class="mb-partners-head">
+      <div>
+        <span class="eyebrow">SEKTÖR AĞI</span>
+        <h2>İş Ortaklarımız</h2>
+        <p>Marble Borsa'da yer alan üretici, tedarikçi ve hizmet firmaları.</p>
+      </div>
+      
+    </div>
+    <div class="mb-partner-logos" id="partnerLogoList">
+      <div class="mb-partner-logo"><strong>Artemis Marble</strong><span>Afyonkarahisar</span></div>
+      <div class="mb-partner-logo"><strong>Demo Stone</strong><span>Natural Stone</span></div>
+      <div class="mb-partner-logo"><strong>MB Logistics</strong><span>Logistics</span></div>
+      
+    </div>
+  </div>
+</section>
 <footer>
 <div class="portal-footer-note">
-      Stone Quote Market, firmalar ile alıcıları doğrudan buluşturan bir B2B ilan ve teklif platformudur.
+      Marble Borsa, firmalar ile alıcıları doğrudan buluşturan bir B2B ilan ve teklif platformudur.
     </div>
-<span>Stone Quote Market demo · Ticaret ve ödeme kullanıcılar arasında doğrudan yürür.</span>
+<span>Marble Borsa demo · Ticaret ve ödeme kullanıcılar arasında doğrudan yürür.</span>
 <span>Demo verileri tarayıcınızda saklanır.</span>
 <div class="legal-footer"><div class="legal-footer-links">
 <button onclick="openLegal('kvkkModal')">KVKK Aydınlatma Metni</button>
@@ -2694,7 +3766,7 @@ footer{
 <button onclick="openLegal('termsModal')">Kullanım Koşulları</button>
 <button onclick="openLegal('cookieModal')">Çerez Politikası</button>
 <button onclick="openLegal('commercialModal')">Elektronik İleti Onayı</button>
-</div><p>Stone Quote Market bir B2B keşif ve teklif platformudur; satış, ödeme, lojistik, gümrük veya hizmet sözleşmelerinin tarafı değildir.</p></div></footer>
+</div><p>Marble Borsa bir B2B keşif ve teklif platformudur; satış, ödeme, lojistik, gümrük veya hizmet sözleşmelerinin tarafı değildir.</p></div></footer>
 <!-- AUTH MODAL -->
 <div class="modal" id="authModal">
 <div class="modal-card auth-card" style="width:min(900px,96vw)">
@@ -2704,6 +3776,12 @@ footer{
 <button class="tab" id="registerTab" onclick="switchAuth('register')">Üye Ol</button>
 </div>
 <div id="loginPane">
+<div class="demo-credentials">
+  <b>Demo Firma Hesabı</b>
+  <span>Kullanıcı adı: <strong>demo@marbleborsa.com</strong></span>
+  <span>Şifre: <strong>12345678</strong></span>
+</div>
+
 <div class="auth-pane-title compact">
 <span class="eyebrow">HESAP GİRİŞİ</span>
 <h2>Hesabınıza giriş yapın</h2>
@@ -2717,7 +3795,7 @@ footer{
 <div class="auth-pane-title">
 <span class="eyebrow">KURUMSAL ÜYELİK</span>
 <h2>Firma hesabınızı oluşturun</h2>
-<p>Stone Quote Market firma hesabı açmak için hesap sahibinin ve firmanın temel kurumsal bilgilerini ister.</p>
+<p>Marble Borsa firma hesabı açmak için hesap sahibinin ve firmanın temel kurumsal bilgilerini ister.</p>
 </div>
 <div class="group"><label>Ad Soyad / Yetkili</label><input autocomplete="name" id="regName" placeholder="Adınız Soyadınız"/></div>
 <div class="group" style="margin-top:10px"><label>E-posta</label><input autocomplete="email" id="regEmail" placeholder="ornek@firma.com" type="email"/></div>
@@ -3037,6 +4115,32 @@ async function login(){
  if(!requireSupabase('loginNotice'))return;
  const email=document.getElementById('loginEmail').value.trim().toLowerCase(); const password=document.getElementById('loginPassword').value;
  showAuthMessage('','info','loginNotice'); if(!email||!password){showAuthMessage('E-posta ve şifrenizi girin.','error','loginNotice');return;}
+
+ if(email==='demo@marbleborsa.com' && password==='12345678'){
+   currentUser={
+     id:'demo-supplier',
+     email:'demo@marbleborsa.com',
+     full_name:'Demo Firma Yetkilisi',
+     name:'Demo Firma Yetkilisi',
+     role:'supplier',
+     company:{
+       legal_name:'Marble Borsa Demo Mermer',
+       activity_type:'Ocak + Fabrika',
+       country:'Türkiye',
+       city:'Afyonkarahisar',
+       verification_status:'verified'
+     },
+     isDemo:true
+   };
+   try{
+     localStorage.setItem('mb_demo_mode','1');
+     localStorage.setItem('sb_currentUser',JSON.stringify(currentUser));
+   }catch(e){}
+   closeModal('authModal');
+   renderSession();
+   document.getElementById('dashboard')?.scrollIntoView({behavior:'smooth'});
+   return;
+ }
  const button=document.querySelector('#loginPane .btn.primary');const oldText=button?.textContent;if(button){button.disabled=true;button.textContent='Giriş yapılıyor...';}
  try{const {data,error}=await sqmSupabase.auth.signInWithPassword({email,password});if(error)throw error;currentUser=await loadSupabaseCurrentUser(data.user);closeModal('authModal');renderSession();document.getElementById('dashboard')?.scrollIntoView({behavior:'smooth'});}
  catch(err){console.error(err);showAuthMessage('E-posta veya şifre hatalı ya da hesap henüz doğrulanmamış olabilir.','error','loginNotice');}
@@ -3501,9 +4605,9 @@ function saveCompanyProfile(){
 window.addEventListener('click',e=>{if(e.target.classList.contains('modal'))e.target.classList.remove('show')});
 renderRequests();initSupabaseAuth();
 </script>
-<div class="modal legal-modal" id="termsModal"><div class="modal-card legal-card"><button class="close" onclick="closeModal('termsModal')">×</button><span class="eyebrow">HUKUKİ METİNLER</span><h2>Kullanım Koşulları</h2><div class="legal-copy"><p><strong>Son güncelleme:</strong> 11 Eylül 2026</p><p>Stone Quote Market doğal taş sektöründeki alıcı, üretici ve hizmet sağlayıcıları bir araya getiren B2B keşif ve teklif talebi platformudur.</p><h3>Platformun rolü</h3><p>Stone Quote Market satıcı, alıcı, ödeme kuruluşu, taşıyıcı, gemi acentesi, gümrük müşaviri veya taraflar arasındaki sözleşmenin tarafı değildir. Satış, ödeme, sevkiyat, sigorta, gümrük ve diğer ticari işlemler kullanıcılar arasında doğrudan yürütülür.</p><h3>Hesap ve içerik</h3><p>Kullanıcı verdiği firma, ürün, stok, kapasite, görsel, video, test sonucu ve belge bilgilerinin doğru ve hukuka uygun olmasından sorumludur.</p><h3>Teklifler</h3><p>Fiyat, kalite, termin, teslim ve teknik bilgiler ilgili kullanıcı tarafından sağlanır; platform bunların doğruluğunu garanti etmez.</p><h3>Yasak kullanım</h3><p>Sahte firma, sahte talep/teklif, yanıltıcı ürün bilgisi, yetkisiz belge veya görsel kullanımı ve hukuka aykırı içerik yasaktır.</p><h3>İletişim</h3><p>Canlıya geçmeden önce platform işletmecisinin gerçek ticari unvanı, adresi ve resmi iletişim bilgileri bu metne eklenmelidir.</p></div></div></div>
+<div class="modal legal-modal" id="termsModal"><div class="modal-card legal-card"><button class="close" onclick="closeModal('termsModal')">×</button><span class="eyebrow">HUKUKİ METİNLER</span><h2>Kullanım Koşulları</h2><div class="legal-copy"><p><strong>Son güncelleme:</strong> 11 Eylül 2026</p><p>Marble Borsa doğal taş sektöründeki alıcı, üretici ve hizmet sağlayıcıları bir araya getiren B2B keşif ve teklif talebi platformudur.</p><h3>Platformun rolü</h3><p>Marble Borsa satıcı, alıcı, ödeme kuruluşu, taşıyıcı, gemi acentesi, gümrük müşaviri veya taraflar arasındaki sözleşmenin tarafı değildir. Satış, ödeme, sevkiyat, sigorta, gümrük ve diğer ticari işlemler kullanıcılar arasında doğrudan yürütülür.</p><h3>Hesap ve içerik</h3><p>Kullanıcı verdiği firma, ürün, stok, kapasite, görsel, video, test sonucu ve belge bilgilerinin doğru ve hukuka uygun olmasından sorumludur.</p><h3>Teklifler</h3><p>Fiyat, kalite, termin, teslim ve teknik bilgiler ilgili kullanıcı tarafından sağlanır; platform bunların doğruluğunu garanti etmez.</p><h3>Yasak kullanım</h3><p>Sahte firma, sahte talep/teklif, yanıltıcı ürün bilgisi, yetkisiz belge veya görsel kullanımı ve hukuka aykırı içerik yasaktır.</p><h3>İletişim</h3><p>Canlıya geçmeden önce platform işletmecisinin gerçek ticari unvanı, adresi ve resmi iletişim bilgileri bu metne eklenmelidir.</p></div></div></div>
 <div class="modal legal-modal" id="privacyModal"><div class="modal-card legal-card"><button class="close" onclick="closeModal('privacyModal')">×</button><span class="eyebrow">GİZLİLİK</span><h2>Gizlilik Sözleşmesi</h2><div class="legal-copy"><p><strong>Son güncelleme:</strong> 11 Eylül 2026</p><h3>Toplanan bilgiler</h3><p>Ad-soyad, e-posta, telefon, firma adı, ülke/şehir, üyelik ve firma profili, ürün/katalog bilgileri, teklif talepleri, yüklenen medya/doküman bilgileri ile teknik ve güvenlik kayıtları işlenebilir.</p><h3>Amaçlar</h3><p>Hesap ve firma yönetimi, alıcı-tedarikçi eşleştirmesi, teklif süreçleri, güvenlik, destek, kötüye kullanımın önlenmesi ve yasal yükümlülüklerin yerine getirilmesi.</p><h3>Paylaşım</h3><p>Kullanıcının yayınlamayı seçtiği firma, ürün ve talep bilgileri platform kullanıcılarıyla paylaşılabilir. Teknik hizmet sağlayıcılarla hizmet için gerekli ölçüde paylaşım yapılabilir.</p><h3>Saklama</h3><p>Veriler işleme amacı ve uygulanabilir yasal saklama süreleri boyunca tutulur.</p><h3>İletişim</h3><p>Veri sorumlusunun gerçek unvanı, adresi ve KVKK başvuru kanalı canlıya geçmeden önce eklenmelidir.</p></div></div></div>
-<div class="modal legal-modal" id="kvkkModal"><div class="modal-card legal-card"><button class="close" onclick="closeModal('kvkkModal')">×</button><span class="eyebrow">6698 SAYILI KANUN</span><h2>KVKK Aydınlatma Metni</h2><div class="legal-copy"><div class="legal-warning">Taslak metindir. Canlıya geçmeden önce veri sorumlusunun gerçek unvanı, adresi, iletişim bilgileri ve kullanılan altyapı sağlayıcılarına göre hukukçu tarafından son kontrolden geçirilmelidir.</div><h3>Veri sorumlusu</h3><p>[STONE QUOTE MARKET'İ İŞLETECEK GERÇEK KİŞİ / ŞİRKET UNVANI] veri sorumlusudur.</p><h3>İşlenen veriler</h3><p>Kimlik ve iletişim, üyelik ve firma, işlem güvenliği, ürün/katalog, teklif talebi ve kullanıcı tarafından sağlanan içerik verileri işlenebilir.</p><h3>İşleme amaçları</h3><p>Üyelik oluşturulması ve yönetimi, B2B eşleştirme hizmeti, taleplerin ilgili firmalara yönlendirilmesi, destek, güvenlik, uyuşmazlık yönetimi ve hukuki yükümlülüklerin yerine getirilmesi.</p><h3>Hukuki sebepler</h3><p>Somut faaliyete göre sözleşmenin kurulması veya ifası, hukuki yükümlülük, bir hakkın tesisi/kullanılması/korunması, meşru menfaat ve yalnız gerekli olduğu hallerde açık rıza.</p><h3>Aktarım</h3><p>Hizmetin yürütülmesi için gerekli ölçüde barındırma, depolama, e-posta ve güvenlik sağlayıcılarına; talep/teklif akışında ilgili kullanıcı gruplarına ve hukuken yetkili kurumlara aktarım yapılabilir.</p><h3>Toplama yöntemi</h3><p>Kayıt ve iletişim formları, kullanıcı paneli, dosya yüklemeleri, teklif işlemleri ve teknik kayıtlar üzerinden otomatik veya kısmen otomatik yollarla.</p><h3>Haklar</h3><p>KVKK'nın 11. maddesindeki haklar veri sorumlusuna başvuru yoluyla kullanılabilir. Başvuru adresi canlıya geçmeden önce burada belirtilecektir.</p></div></div></div>
+<div class="modal legal-modal" id="kvkkModal"><div class="modal-card legal-card"><button class="close" onclick="closeModal('kvkkModal')">×</button><span class="eyebrow">6698 SAYILI KANUN</span><h2>KVKK Aydınlatma Metni</h2><div class="legal-copy"><div class="legal-warning">Taslak metindir. Canlıya geçmeden önce veri sorumlusunun gerçek unvanı, adresi, iletişim bilgileri ve kullanılan altyapı sağlayıcılarına göre hukukçu tarafından son kontrolden geçirilmelidir.</div><h3>Veri sorumlusu</h3><p>[MARBLE BORSA'İ İŞLETECEK GERÇEK KİŞİ / ŞİRKET UNVANI] veri sorumlusudur.</p><h3>İşlenen veriler</h3><p>Kimlik ve iletişim, üyelik ve firma, işlem güvenliği, ürün/katalog, teklif talebi ve kullanıcı tarafından sağlanan içerik verileri işlenebilir.</p><h3>İşleme amaçları</h3><p>Üyelik oluşturulması ve yönetimi, B2B eşleştirme hizmeti, taleplerin ilgili firmalara yönlendirilmesi, destek, güvenlik, uyuşmazlık yönetimi ve hukuki yükümlülüklerin yerine getirilmesi.</p><h3>Hukuki sebepler</h3><p>Somut faaliyete göre sözleşmenin kurulması veya ifası, hukuki yükümlülük, bir hakkın tesisi/kullanılması/korunması, meşru menfaat ve yalnız gerekli olduğu hallerde açık rıza.</p><h3>Aktarım</h3><p>Hizmetin yürütülmesi için gerekli ölçüde barındırma, depolama, e-posta ve güvenlik sağlayıcılarına; talep/teklif akışında ilgili kullanıcı gruplarına ve hukuken yetkili kurumlara aktarım yapılabilir.</p><h3>Toplama yöntemi</h3><p>Kayıt ve iletişim formları, kullanıcı paneli, dosya yüklemeleri, teklif işlemleri ve teknik kayıtlar üzerinden otomatik veya kısmen otomatik yollarla.</p><h3>Haklar</h3><p>KVKK'nın 11. maddesindeki haklar veri sorumlusuna başvuru yoluyla kullanılabilir. Başvuru adresi canlıya geçmeden önce burada belirtilecektir.</p></div></div></div>
 <div class="modal legal-modal" id="cookieModal"><div class="modal-card legal-card"><button class="close" onclick="closeModal('cookieModal')">×</button><span class="eyebrow">ÇEREZLER</span><h2>Çerez Politikası</h2><div class="legal-copy"><p>Temel site işlevleri için zorunlu teknolojiler kullanılabilir. Analitik, performans veya pazarlama amaçlı zorunlu olmayan çerezler ancak kullanıcının tercihine göre etkinleştirilmelidir.</p><h3>Zorunlu</h3><p>Giriş, güvenlik ve temel fonksiyonlar.</p><h3>Analitik</h3><p>Kullanım istatistikleri. Varsayılan olarak kapalı tutulmalıdır.</p><h3>Pazarlama</h3><p>Reklam ve yeniden hedefleme. Varsayılan olarak kapalı tutulmalıdır.</p></div></div></div>
 <div class="modal legal-modal" id="commercialModal"><div class="modal-card legal-card"><button class="close" onclick="closeModal('commercialModal')">×</button><span class="eyebrow">İLETİŞİM TERCİHİ</span><h2>Elektronik İleti Onayı</h2><div class="legal-copy"><p>Kampanya, üyelik avantajı, sektör duyurusu ve pazarlama içerikli e-posta/SMS onayı isteğe bağlıdır ve sonradan geri alınabilir.</p><p>Hesap güvenliği, şifre yenileme, teklif bildirimi ve hizmetin sunulması için gerekli operasyonel bildirimler pazarlama iletişimi değildir.</p></div></div></div>
 <div class="cookie-banner" id="cookieBanner"><div><b>Çerez tercihleri</b><p>Temel işlevler için zorunlu teknolojiler kullanılır. Analitik ve pazarlama çerezleri ancak onayınızla etkinleştirilir.</p></div><div class="cookie-actions"><button class="btn outline small" onclick="openLegal('cookieModal')">Detaylar</button><button class="btn outline small" onclick="saveCookieChoice('necessary')">Sadece Zorunlu</button><button class="btn primary small" onclick="saveCookieChoice('all')">Tümünü Kabul Et</button></div></div><script>
@@ -3558,7 +4662,7 @@ document.addEventListener('click', function(e){
 <button class="close" onclick="closeModal('contactLeadModal')">×</button>
 <span class="eyebrow">DOĞRUDAN İLETİŞİM</span>
 <h2>Firma Benimle İletişime Geçsin</h2>
-<p class="lead-intro">Bu talebi gönderdiğinizde seçtiğiniz iletişim bilgileriniz satıcı firmaya iletilir. Satıcı, talebin Stone Quote Market üzerinden geldiğini görür.</p>
+<p class="lead-intro">Bu talebi gönderdiğinizde seçtiğiniz iletişim bilgileriniz satıcı firmaya iletilir. Satıcı, talebin Marble Borsa üzerinden geldiğini görür.</p>
 <input id="leadProductId" type="hidden"/>
 <div class="group">
 <label>Ad Soyad *</label>
@@ -3636,12 +4740,12 @@ function submitContactLead(){
     company,
     email:shareEmail?email:'',
     phone:sharePhone?phone:'',
-    source:'Stone Quote Market',
+    source:'Marble Borsa',
     status:'Yeni',
     createdAt:new Date().toISOString()
   });
   localStorage.setItem('sqm_contact_leads',JSON.stringify(leads));
-  alert('İletişim talebiniz kaydedildi. Satıcı, talebin Stone Quote Market üzerinden geldiğini görecek.');
+  alert('İletişim talebiniz kaydedildi. Satıcı, talebin Marble Borsa üzerinden geldiğini görecek.');
   closeModal('contactLeadModal');
 }
 
@@ -3712,6 +4816,27 @@ document.addEventListener('click', function(e){
     const opener=e.target.closest && e.target.closest('[data-market-open]');
     if(opener){ openPanel(opener.dataset.marketOpen); return; }
 
+    const recent=e.target.closest && e.target.closest('[data-recent-stone]');
+    if(recent){
+      e.preventDefault();
+      openPanel('panel-stones');
+      const q=recent.dataset.recentStone||'';
+      const input=document.getElementById('sqmQuickSearch');
+      if(input) input.value=q;
+      setTimeout(()=>{
+        const active=document.querySelector('.sqm-panel.active');
+        if(!active) return;
+        const cards=[...active.querySelectorAll('.card,.stone,.product-card')];
+        const hit=cards.find(x=>(x.textContent||'').toLowerCase().includes(q.toLowerCase()));
+        if(hit){
+          hit.scrollIntoView({behavior:'smooth',block:'center'});
+          hit.classList.add('recent-hit');
+          setTimeout(()=>hit.classList.remove('recent-hit'),1400);
+        }
+      },180);
+      return;
+    }
+
     const navLink=e.target.closest && e.target.closest('.main-nav a, .main-nav button');
     if(navLink){
       const t=(navLink.textContent||'').trim().toLowerCase();
@@ -3745,5 +4870,271 @@ document.addEventListener('click', function(e){
     });
   }
 })();
-</script></body>
+</script>
+<script>
+function demoLogin(){
+  currentUser={
+    id:'demo-supplier',
+    email:'demo@marbleborsa.com',
+    full_name:'Demo Firma Yetkilisi',
+    name:'Demo Firma Yetkilisi',
+    role:'supplier',
+    company:{
+      legal_name:'Marble Borsa Demo Mermer',
+      activity_type:'Ocak + Fabrika',
+      country:'Türkiye',
+      city:'Afyonkarahisar',
+      verification_status:'verified'
+    },
+    isDemo:true
+  };
+
+  try{
+    localStorage.setItem('mb_demo_mode','1');
+    localStorage.setItem('sb_currentUser',JSON.stringify(currentUser));
+  }catch(e){}
+
+  if(typeof renderSession==='function') renderSession();
+  if(typeof closeModal==='function') closeModal('authModal');
+
+  const dash=document.getElementById('dashboard');
+  if(dash) dash.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+(function restoreMarbleBorsaDemo(){
+  try{
+    if(localStorage.getItem('mb_demo_mode')!=='1') return;
+    const saved=JSON.parse(localStorage.getItem('sb_currentUser')||'null');
+    if(saved && saved.isDemo){
+      currentUser=saved;
+      setTimeout(()=>{ if(typeof renderSession==='function') renderSession(); },50);
+    }
+  }catch(e){}
+})();
+</script>
+
+
+
+<script>
+const MB_TRANSLATION_PATCH={"en": {"Demo Giriş": "Demo Login", "Giriş": "Sign In", "Firma Ekle": "Register Company", "Üye Girişi": "Member Login", "Firmaların kendi ticari isimleri ortak taş sınıfına bağlanır. Böylece alıcı aynı taşı sunan farklı firmaları tek yerde görebilir.": "Supplier trade names are mapped to a common stone classification, allowing buyers to compare companies offering the same stone in one place.", "Üretici, ocak, fabrika ve hizmet firmaları.": "Producers, quarries, factories and service providers.", "Firmalar": "Companies", "ÜRETİCİLER": "PRODUCERS", "Tüm Uygun Üreticilerden Teklif Al": "Request Quotes from All Matching Producers", "✓ Doğrulanmış Firma": "✓ Verified Company", "Katalog": "Catalog", "Teklif Al": "Request Quote", "Doğrulanmış Firma": "Verified Company", "Firma doğrulaması": "Company Verification", "Talep panosu": "Buying Request Board", "Alıcıların oluşturduğu talepler uygun üreticilerin çalışma alanına düşer. Bu prototipte örnek talepler gösterilir.": "Buyer requests are matched with relevant producers. Sample requests are shown in this prototype.", "Elmas Soket": "Diamond Segments", "Elmas Testere": "Diamond Saw Blades", "Elmas Tel": "Diamond Wire", "Taş İşleme Makineleri": "Stone Processing Machinery", "Lojistik, acente, gümrük ve saha hizmetleri.": "Logistics, agency, customs and on-site services.", "Mermer Firmaları": "Marble Companies", "Fabrikalar ve ihracatçılar": "Factories and exporters", "Makine Firmaları": "Machinery Companies", "Kesim ve işleme teknolojileri": "Cutting and processing technologies", "Malzeme Tedarikçileri": "Materials Suppliers", "Lojistik Hizmetleri": "Logistics Services", "Aktif satın alma ihtiyaçları": "Active sourcing requirements", "Doğrudan": "Direct Contact", "Alıcı ve üretici iletişimi": "Direct buyer-producer communication", "Tek Talep": "One Request", "Birden fazla uygun üreticiden teklif": "Quotes from multiple matching producers", "Teklifleri karşılaştırın": "Compare Quotes", "Firma, termin ve ürün detaylarını görün": "Compare company, lead time and product details", "Talep oluşturmak için giriş yapmanız gerekir. Demo üyeliği birkaç saniye sürer.": "Sign in to create a buying request. You can use the demo account to explore the workflow.", "Teklif Kimlerden Gelsin?": "Who Should Receive the Request?", "Tüm uygun üreticiler": "All matching producers", "Yalnızca doğrulanmış firmalar": "Verified companies only", "Seçtiğim firma": "Selected company", "ÜYE PANELİ": "MEMBER DASHBOARD", "Hesabınıza giriş yapın": "Sign in to your account", "Alıcı ve üretici hesapları için ayrı çalışma alanları bulunur.": "Buyers and suppliers have separate workspaces.", "KVKK Aydınlatma Metni": "Privacy Notice (KVKK)", "Kullanım Koşulları": "Terms of Use", "Firma hesabınızı oluşturun": "Create Your Account", "E-posta": "Email", "Şifre": "Password", "Şifreniz": "Your password", "En az 8 karakter": "At least 8 characters", "Hesap Türü": "Account Type", "Alıcı": "Buyer", "Taş ve ürün talebi oluşturur.": "Creates stone and product buying requests.", "Üretici / Tedarikçi": "Producer / Supplier", "Katalog ekler, taleplere teklif verir.": "Publishes a catalog and responds to buying requests.", "Hizmet Sağlayıcı": "Service Provider", "Lojistik, gümrük, ekspertiz vb.": "Logistics, customs brokerage, inspection and related services.", "FİRMA BİLGİLERİ": "COMPANY INFORMATION", "Firma hesabı açmak için kurumsal bilgiler zorunludur.": "Company information is required for supplier and service-provider accounts.", "YETKİLİ KİŞİ": "AUTHORIZED REPRESENTATIVE", "FİRMA DOĞRULAMA": "COMPANY VERIFICATION", "Başvuru durumu: İnceleme Bekliyor": "Application status: Pending Review", "Blok": "Block", "Plaka": "Slab", "Ebatlı": "Cut to Size", "AFYON · TÜRKİYE": "AFYON · TÜRKİYE", "BURDUR · TÜRKİYE": "BURDUR · TÜRKİYE"}, "zh": {"Demo Giriş": "演示登录", "Giriş": "登录", "Firma Ekle": "企业注册", "Üye Girişi": "会员登录", "Firmaların kendi ticari isimleri ortak taş sınıfına bağlanır. Böylece alıcı aynı taşı sunan farklı firmaları tek yerde görebilir.": "供应商的商品名称会关联到统一的石材分类，采购商可在同一页面比较提供同类石材的不同企业。", "Üretici, ocak, fabrika ve hizmet firmaları.": "生产商、矿山、加工厂及服务商。", "Firmalar": "企业", "ÜRETİCİLER": "生产商", "Tüm Uygun Üreticilerden Teklif Al": "向所有匹配的生产商询价", "✓ Doğrulanmış Firma": "✓ 已认证企业", "Katalog": "产品目录", "Teklif Al": "询价", "Doğrulanmış Firma": "已认证企业", "Firma doğrulaması": "企业认证", "Talep panosu": "采购需求大厅", "Alıcıların oluşturduğu talepler uygun üreticilerin çalışma alanına düşer. Bu prototipte örnek talepler gösterilir.": "采购商发布的需求会匹配给相关生产商。本演示版本展示示例采购需求。", "Elmas Soket": "金刚石刀头", "Elmas Testere": "金刚石锯片", "Elmas Tel": "金刚石绳锯", "Taş İşleme Makineleri": "石材加工机械", "Lojistik, acente, gümrük ve saha hizmetleri.": "物流、船务代理、报关及现场服务。", "Mermer Firmaları": "大理石企业", "Fabrikalar ve ihracatçılar": "加工厂与出口商", "Makine Firmaları": "机械设备企业", "Kesim ve işleme teknolojileri": "切割与加工技术", "Malzeme Tedarikçileri": "材料供应商", "Lojistik Hizmetleri": "物流服务", "Aktif satın alma ihtiyaçları": "当前采购需求", "Doğrudan": "直接对接", "Alıcı ve üretici iletişimi": "采购商与生产商直接沟通", "Tek Talep": "一次发布", "Birden fazla uygun üreticiden teklif": "获取多家匹配生产商的报价", "Teklifleri karşılaştırın": "比较报价", "Firma, termin ve ürün detaylarını görün": "比较企业、交期及产品详情", "Talep oluşturmak için giriş yapmanız gerekir. Demo üyeliği birkaç saniye sürer.": "请先登录后发布采购需求。您也可以使用演示账户体验流程。", "Teklif Kimlerden Gelsin?": "向哪些供应商询价？", "Tüm uygun üreticiler": "所有匹配的生产商", "Yalnızca doğrulanmış firmalar": "仅已认证企业", "Seçtiğim firma": "指定企业", "ÜYE PANELİ": "会员中心", "Hesabınıza giriş yapın": "登录您的账户", "Alıcı ve üretici hesapları için ayrı çalışma alanları bulunur.": "采购商和供应商拥有独立的工作区。", "KVKK Aydınlatma Metni": "KVKK 隐私告知", "Kullanım Koşulları": "使用条款", "Firma hesabınızı oluşturun": "创建账户", "E-posta": "电子邮箱", "Şifre": "密码", "Şifreniz": "请输入密码", "En az 8 karakter": "至少 8 个字符", "Hesap Türü": "账户类型", "Alıcı": "采购商", "Taş ve ürün talebi oluşturur.": "发布石材及相关产品采购需求。", "Üretici / Tedarikçi": "生产商 / 供应商", "Katalog ekler, taleplere teklif verir.": "发布产品目录并对采购需求进行报价。", "Hizmet Sağlayıcı": "服务商", "Lojistik, gümrük, ekspertiz vb.": "物流、报关、检验等服务。", "FİRMA BİLGİLERİ": "企业信息", "Firma hesabı açmak için kurumsal bilgiler zorunludur.": "供应商及服务商账户需填写企业信息。", "YETKİLİ KİŞİ": "授权联系人", "FİRMA DOĞRULAMA": "企业认证", "Başvuru durumu: İnceleme Bekliyor": "申请状态：待审核", "Blok": "荒料", "Plaka": "大板", "Ebatlı": "规格板"}, "ar": {"Demo Giriş": "دخول تجريبي", "Giriş": "تسجيل الدخول", "Firma Ekle": "تسجيل شركة", "Üye Girişi": "دخول الأعضاء", "Firmaların kendi ticari isimleri ortak taş sınıfına bağlanır. Böylece alıcı aynı taşı sunan farklı firmaları tek yerde görebilir.": "تُربط الأسماء التجارية لدى الموردين بتصنيف موحد للحجر، مما يتيح للمشترين مقارنة الشركات التي تعرض الحجر نفسه في مكان واحد.", "Üretici, ocak, fabrika ve hizmet firmaları.": "المنتجون والمحاجر والمصانع ومقدمو الخدمات.", "Firmalar": "الشركات", "ÜRETİCİLER": "المنتجون", "Tüm Uygun Üreticilerden Teklif Al": "طلب عروض أسعار من جميع المنتجين المطابقين", "✓ Doğrulanmış Firma": "✓ شركة موثقة", "Katalog": "الكتالوج", "Teklif Al": "طلب عرض سعر", "Doğrulanmış Firma": "شركة موثقة", "Firma doğrulaması": "توثيق الشركة", "Talep panosu": "لوحة طلبات الشراء", "Alıcıların oluşturduğu talepler uygun üreticilerin çalışma alanına düşer. Bu prototipte örnek talepler gösterilir.": "تتم مطابقة طلبات المشترين مع المنتجين المناسبين. يعرض هذا النموذج طلبات شراء تجريبية.", "Elmas Soket": "قطاعات ألماس", "Elmas Testere": "شفرات منشار ألماس", "Elmas Tel": "سلك ألماس", "Taş İşleme Makineleri": "آلات معالجة الحجر", "Lojistik, acente, gümrük ve saha hizmetleri.": "الخدمات اللوجستية والوكالات والتخليص الجمركي والخدمات الميدانية.", "Mermer Firmaları": "شركات الرخام", "Fabrikalar ve ihracatçılar": "المصانع والمصدرون", "Makine Firmaları": "شركات الآلات", "Kesim ve işleme teknolojileri": "تقنيات القطع والمعالجة", "Malzeme Tedarikçileri": "مورّدو المواد", "Lojistik Hizmetleri": "الخدمات اللوجستية", "Aktif satın alma ihtiyaçları": "احتياجات شراء نشطة", "Doğrudan": "تواصل مباشر", "Alıcı ve üretici iletişimi": "تواصل مباشر بين المشتري والمنتج", "Tek Talep": "طلب واحد", "Birden fazla uygun üreticiden teklif": "عروض من عدة منتجين مطابقين", "Teklifleri karşılaştırın": "قارن عروض الأسعار", "Firma, termin ve ürün detaylarını görün": "قارن الشركة ومدة التوريد وتفاصيل المنتج", "Talep oluşturmak için giriş yapmanız gerekir. Demo üyeliği birkaç saniye sürer.": "سجّل الدخول لإنشاء طلب شراء. يمكنك استخدام الحساب التجريبي لاستكشاف سير العمل.", "Teklif Kimlerden Gelsin?": "من تريد أن يرسل عرض السعر؟", "Tüm uygun üreticiler": "جميع المنتجين المطابقين", "Yalnızca doğrulanmış firmalar": "الشركات الموثقة فقط", "Seçtiğim firma": "الشركة المحددة", "ÜYE PANELİ": "لوحة العضو", "Hesabınıza giriş yapın": "سجّل الدخول إلى حسابك", "Alıcı ve üretici hesapları için ayrı çalışma alanları bulunur.": "توجد مساحات عمل منفصلة للمشترين والموردين.", "KVKK Aydınlatma Metni": "إشعار الخصوصية (KVKK)", "Kullanım Koşulları": "شروط الاستخدام", "Firma hesabınızı oluşturun": "أنشئ حسابك", "E-posta": "البريد الإلكتروني", "Şifre": "كلمة المرور", "Şifreniz": "كلمة المرور", "En az 8 karakter": "8 أحرف على الأقل", "Hesap Türü": "نوع الحساب", "Alıcı": "مشتري", "Taş ve ürün talebi oluşturur.": "ينشئ طلبات شراء للحجر والمنتجات.", "Üretici / Tedarikçi": "منتج / مورّد", "Katalog ekler, taleplere teklif verir.": "ينشر كتالوجاً ويقدم عروض أسعار لطلبات الشراء.", "Hizmet Sağlayıcı": "مقدم خدمة", "Lojistik, gümrük, ekspertiz vb.": "الخدمات اللوجستية والتخليص الجمركي والفحص وغيرها.", "FİRMA BİLGİLERİ": "بيانات الشركة", "Firma hesabı açmak için kurumsal bilgiler zorunludur.": "بيانات الشركة مطلوبة لحسابات الموردين ومقدمي الخدمات.", "YETKİLİ KİŞİ": "الممثل المخول", "FİRMA DOĞRULAMA": "توثيق الشركة", "Başvuru durumu: İnceleme Bekliyor": "حالة الطلب: قيد المراجعة", "Blok": "بلوك", "Plaka": "ألواح", "Ebatlı": "مقصوص حسب المقاس"}};
+Object.keys(MB_TRANSLATION_PATCH).forEach(lang=>{
+  MB_TRANSLATIONS[lang]=Object.assign(MB_TRANSLATIONS[lang]||{},MB_TRANSLATION_PATCH[lang]);
+});
+</script>
+
+
+<script>
+const MB_V12_TRANSLATIONS={
+ en:{
+  "Elmas & Kesiciler":"Diamond Tools & Cutting","Elmas soket, testere, tel ve doğal taş kesim ekipmanları.":"Diamond segments, saw blades, wire and natural-stone cutting equipment.",
+  "Forklift & İş Makineleri":"Forklifts & Heavy Equipment","Fabrika, ocak ve stok sahaları için forklift, yükleyici ve iş makineleri.":"Forklifts, loaders and heavy equipment for factories, quarries and stockyards.",
+  "Paketleme & Kesme":"Packing & Cutting","Kesim yardımcıları, ambalaj, kasa ve sevkiyata hazırlık ekipmanları.":"Cutting accessories, packaging, crates and shipment-preparation equipment.",
+  "Aşındırıcı & Cila":"Abrasives & Polishing","Kesici Takımlar":"Cutting Tools","Sarf Malzemeleri":"Consumables","Paketleme Malzemeleri":"Packaging Materials",
+  "İş Ortaklarımız":"Our Partners","Marble Borsa'da yer alan üretici, tedarikçi ve hizmet firmaları.":"Producers, suppliers and service companies on Marble Borsa.","Firmanızı Ekleyin":"List Your Company","SEKTÖR AĞI":"INDUSTRY NETWORK","Yeni firma":"New company"
+ },
+ zh:{
+  "Elmas & Kesiciler":"金刚石工具与切割设备","Elmas soket, testere, tel ve doğal taş kesim ekipmanları.":"金刚石刀头、锯片、绳锯及天然石材切割设备。",
+  "Forklift & İş Makineleri":"叉车与工程机械","Fabrika, ocak ve stok sahaları için forklift, yükleyici ve iş makineleri.":"适用于工厂、矿山和堆场的叉车、装载机及工程机械。",
+  "Paketleme & Kesme":"包装与切割","Kesim yardımcıları, ambalaj, kasa ve sevkiyata hazırlık ekipmanları.":"切割辅助设备、包装、木箱及出货准备设备。",
+  "Aşındırıcı & Cila":"磨料与抛光","Kesici Takımlar":"切割工具","Sarf Malzemeleri":"耗材","Paketleme Malzemeleri":"包装材料",
+  "İş Ortaklarımız":"合作伙伴","Marble Borsa'da yer alan üretici, tedarikçi ve hizmet firmaları.":"入驻 Marble Borsa 的生产商、供应商及服务企业。","Firmanızı Ekleyin":"入驻企业","SEKTÖR AĞI":"行业网络","Yeni firma":"新企业"
+ },
+ ar:{
+  "Elmas & Kesiciler":"أدوات الألماس ومعدات القطع","Elmas soket, testere, tel ve doğal taş kesim ekipmanları.":"قطاعات الألماس وشفرات المناشير والأسلاك ومعدات قطع الحجر الطبيعي.",
+  "Forklift & İş Makineleri":"الرافعات الشوكية والمعدات الثقيلة","Fabrika, ocak ve stok sahaları için forklift, yükleyici ve iş makineleri.":"رافعات شوكية ولوادر ومعدات ثقيلة للمصانع والمحاجر وساحات التخزين.",
+  "Paketleme & Kesme":"التعبئة والقطع","Kesim yardımcıları, ambalaj, kasa ve sevkiyata hazırlık ekipmanları.":"ملحقات القطع ومواد التعبئة والصناديق ومعدات تجهيز الشحن.",
+  "Aşındırıcı & Cila":"مواد الجلخ والتلميع","Kesici Takımlar":"أدوات القطع","Sarf Malzemeleri":"المواد الاستهلاكية","Paketleme Malzemeleri":"مواد التعبئة",
+  "İş Ortaklarımız":"شركاؤنا","Marble Borsa'da yer alan üretici, tedarikçi ve hizmet firmaları.":"المنتجون والموردون ومقدمو الخدمات المدرجون على Marble Borsa.","Firmanızı Ekleyin":"أضف شركتك","SEKTÖR AĞI":"شبكة القطاع","Yeni firma":"شركة جديدة"
+ }
+};
+Object.keys(MB_V12_TRANSLATIONS).forEach(lang=>{
+ MB_TRANSLATIONS[lang]=Object.assign(MB_TRANSLATIONS[lang]||{},MB_V12_TRANSLATIONS[lang]);
+});
+</script>
+
+<script>
+const MB_TRANSLATIONS = {"en": {"Türkiye doğal taş sektörünü alıcılarla buluşturan B2B teklif platformu": "B2B quote platform connecting Türkiye's natural stone sector with buyers", "Demo Sürümü": "Demo Version", "Doğal Taş": "Natural Stone", "Firma Rehberi": "Company Directory", "Alım Talepleri": "Buying Requests", "Makine & Sarf": "Machinery & Supplies", "Makine ve Sarf": "Machinery & Supplies", "Hizmetler": "Services", "Giriş Yap": "Sign In", "Üye Ol": "Join", "Firma Kaydı": "Company Registration", "Kategoriler": "Categories", "Ürün, taş adı, firma veya hizmet ara": "Search products, stones, companies or services", "Ara": "Search", "Tür, renk ve formata göre listeleyin.": "Browse by type, color and format.", "Teklifleri Gör": "View Quotes", "Kısayollar": "Shortcuts", "Yeni Eklenenler": "Recently Added", "Tümü": "All", "Ürünler": "Products", "Firmalar": "Companies", "Talepler": "Requests", "Reklam": "Advertisement", "Reklam Alanı": "Advertising Space", "Firma, makine, lojistik veya sektör reklamı yayınlanabilir.": "Company, machinery, logistics or industry ads can be published here.", "Firma tanıtım alanı": "Company promotion area", "Test reklam alanı": "Test advertising space", "Talep Oluştur": "Create Request", "Yayınlanan güncel alım talepleri.": "Current published buying requests.", "Açık": "Open", "Doğal taş ürünleri, üreticiler ve güncel alım talepleri.": "Natural stone products, producers and current buying requests.", "Demo Firma Hesabı": "Demo Company Account", "Kullanıcı adı:": "Username:", "Şifre:": "Password:"}, "zh": {"Türkiye doğal taş sektörünü alıcılarla buluşturan B2B teklif platformu": "连接土耳其天然石材行业与采购商的B2B询价平台", "Demo Sürümü": "演示版", "Doğal Taş": "天然石材", "Firma Rehberi": "企业名录", "Alım Talepleri": "采购需求", "Makine & Sarf": "机械与耗材", "Makine ve Sarf": "机械与耗材", "Hizmetler": "服务", "Giriş Yap": "登录", "Üye Ol": "注册", "Firma Kaydı": "企业注册", "Kategoriler": "分类", "Ürün, taş adı, firma veya hizmet ara": "搜索产品、石材、企业或服务", "Ara": "搜索", "Tür, renk ve formata göre listeleyin.": "按种类、颜色和规格浏览。", "Teklifleri Gör": "查看报价", "Kısayollar": "快捷入口", "Yeni Eklenenler": "最新发布", "Tümü": "全部", "Ürünler": "产品", "Firmalar": "企业", "Talepler": "需求", "Reklam": "广告", "Reklam Alanı": "广告位", "Firma, makine, lojistik veya sektör reklamı yayınlanabilir.": "可发布企业、机械、物流或行业广告。", "Firma tanıtım alanı": "企业推广位", "Test reklam alanı": "测试广告位", "Talep Oluştur": "发布需求", "Yayınlanan güncel alım talepleri.": "当前已发布的采购需求。", "Açık": "开放", "Doğal taş ürünleri, üreticiler ve güncel alım talepleri.": "天然石材产品、生产商及最新采购需求。", "Demo Firma Hesabı": "演示企业账户", "Kullanıcı adı:": "用户名：", "Şifre:": "密码："}, "ar": {"Türkiye doğal taş sektörünü alıcılarla buluşturan B2B teklif platformu": "منصة B2B لربط قطاع الحجر الطبيعي التركي بالمشترين وطلبات عروض الأسعار", "Demo Sürümü": "نسخة تجريبية", "Doğal Taş": "الحجر الطبيعي", "Firma Rehberi": "دليل الشركات", "Alım Talepleri": "طلبات الشراء", "Makine & Sarf": "الآلات والمستلزمات", "Makine ve Sarf": "الآلات والمستلزمات", "Hizmetler": "الخدمات", "Giriş Yap": "تسجيل الدخول", "Üye Ol": "إنشاء حساب", "Firma Kaydı": "تسجيل شركة", "Kategoriler": "الفئات", "Ürün, taş adı, firma veya hizmet ara": "ابحث عن منتج أو حجر أو شركة أو خدمة", "Ara": "بحث", "Tür, renk ve formata göre listeleyin.": "تصفح حسب النوع واللون والمقاس.", "Teklifleri Gör": "عرض العروض", "Kısayollar": "روابط سريعة", "Yeni Eklenenler": "أضيف حديثاً", "Tümü": "الكل", "Ürünler": "المنتجات", "Firmalar": "الشركات", "Talepler": "الطلبات", "Reklam": "إعلان", "Reklam Alanı": "مساحة إعلانية", "Firma, makine, lojistik veya sektör reklamı yayınlanabilir.": "يمكن نشر إعلانات الشركات والآلات والخدمات اللوجستية والقطاع.", "Firma tanıtım alanı": "مساحة تعريف بالشركة", "Test reklam alanı": "مساحة إعلان تجريبية", "Talep Oluştur": "إنشاء طلب", "Yayınlanan güncel alım talepleri.": "طلبات الشراء المنشورة حالياً.", "Açık": "مفتوح", "Doğal taş ürünleri, üreticiler ve güncel alım talepleri.": "منتجات الحجر الطبيعي والمصنعون وطلبات الشراء الحالية.", "Demo Firma Hesabı": "حساب شركة تجريبي", "Kullanıcı adı:": "اسم المستخدم:", "Şifre:": "كلمة المرور:"}};
+const MB_ORIGINAL_TEXT = new WeakMap();
+const MB_ORIGINAL_PLACEHOLDER = new WeakMap();
+
+function mbNormalizeText(s) {
+  return (s || '').replace(/\s+/g,' ').trim();
+}
+
+function mbTranslateTextNode(node, dict) {
+  if(!MB_ORIGINAL_TEXT.has(node)) MB_ORIGINAL_TEXT.set(node,node.nodeValue);
+  const original=MB_ORIGINAL_TEXT.get(node);
+  const key=mbNormalizeText(original);
+  if(!key) return;
+  if(dict && dict[key]) {
+    const lead=(original.match(/^\s*/)||[''])[0];
+    const trail=(original.match(/\s*$/)||[''])[0];
+    node.nodeValue=lead+dict[key]+trail;
+  } else {
+    node.nodeValue=original;
+  }
+}
+
+function setLanguage(lang) {
+  if(!['tr','en','zh','ar'].includes(lang)) lang='tr';
+  const dict=lang==='tr' ? null : MB_TRANSLATIONS[lang];
+
+  document.documentElement.lang=lang;
+  document.documentElement.dir=lang==='ar' ? 'rtl' : 'ltr';
+  document.body.classList.toggle('lang-ar',lang==='ar');
+
+  const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{
+    acceptNode(node){
+      const p=node.parentElement;
+      if(!p || ['SCRIPT','STYLE','NOSCRIPT'].includes(p.tagName)) return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    }
+  });
+  const nodes=[];
+  while(walker.nextNode()) nodes.push(walker.currentNode);
+  nodes.forEach(n=>mbTranslateTextNode(n,dict));
+
+  document.querySelectorAll('input[placeholder],textarea[placeholder]').forEach(el=>{
+    if(!MB_ORIGINAL_PLACEHOLDER.has(el)) MB_ORIGINAL_PLACEHOLDER.set(el,el.placeholder);
+    const original=MB_ORIGINAL_PLACEHOLDER.get(el);
+    el.placeholder=(dict && dict[original]) ? dict[original] : original;
+  });
+
+  document.querySelectorAll('.mb-language-switcher button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
+  try{localStorage.setItem('mb_language',lang)}catch(e){}
+}
+
+document.addEventListener('click',e=>{
+  const btn=e.target.closest('.mb-language-switcher [data-lang]');
+  if(!btn) return;
+  setLanguage(btn.dataset.lang);
+});
+
+document.addEventListener('DOMContentLoaded',()=>{
+  let lang='tr';
+  try{lang=localStorage.getItem('mb_language')||'tr'}catch(e){}
+  setLanguage(lang);
+});
+</script>
+
+
+<script>
+document.addEventListener('input',function(e){
+ if(e.target && e.target.id==='mbCompanySearch'){
+   const q=e.target.value.toLocaleLowerCase('tr-TR').trim();
+   document.querySelectorAll('.mb-dir-row').forEach(row=>{
+     row.style.display=!q || row.textContent.toLocaleLowerCase('tr-TR').includes(q) ? '' : 'none';
+   });
+ }
+});
+document.addEventListener('change',function(e){
+ if(e.target && e.target.id==='mbCompanyCity'){
+   const city=e.target.value.toLocaleLowerCase('tr-TR');
+   document.querySelectorAll('.mb-dir-row').forEach(row=>{
+     row.style.display=!city || row.textContent.toLocaleLowerCase('tr-TR').includes(city) ? '' : 'none';
+   });
+ }
+});
+</script>
+
+
+<div id="mbServiceModal" class="modal" aria-hidden="true">
+  <div class="modal-card" style="max-width:620px">
+    <button class="close" type="button" onclick="closeMbService()">×</button>
+    <span class="eyebrow">HİZMET DETAYI</span>
+    <h2 id="mbServiceTitle" style="margin-top:7px"></h2>
+    <p id="mbServiceDesc" class="muted"></p>
+    <div id="mbServiceMeta" style="margin:16px 0"></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button class="btn primary" type="button" id="mbServiceRequestBtn">Hizmet Talebi Oluştur</button>
+      <button class="btn outline" type="button" onclick="closeMbService()">Kapat</button>
+    </div>
+  </div>
+</div>
+
+
+<script>
+const MB_SERVICES = {
+ "Lojistik & Nakliye": {
+   desc:"Blok, plaka ve ebatlı doğal taş yükleri için kara, deniz ve kombine taşıma hizmetleri.",
+   meta:["Konteyner ve parsiyel yük","Liman ve iç nakliye","Yurt içi / uluslararası taşıma"]
+ },
+ "Gümrük Müşavirliği": {
+   desc:"Doğal taş ve sektör ürünlerinin ithalat ve ihracat işlemleri için gümrük müşavirliği hizmetleri.",
+   meta:["İhracat beyannamesi","İthalat işlemleri","Belge ve mevzuat desteği"]
+ },
+ "Forwarder & Navlun": {
+   desc:"Denizyolu ve multimodal taşımalar için navlun teklifi, rezervasyon ve taşıma organizasyonu.",
+   meta:["FCL / LCL","Navlun teklifi","Hat ve rota seçenekleri"]
+ },
+ "Ekspertiz & Kalite Kontrol": {
+   desc:"Yükleme öncesi ürün, ölçü, yüzey, paketleme ve kalite kontrolleri.",
+   meta:["Pre-shipment inspection","Fotoğraflı kontrol","Ölçü ve kalite raporu"]
+ },
+ "Paketleme & Sandıklama": {
+   desc:"Blok, plaka ve ebatlı ürünlerin ihracata uygun şekilde korunması, kasalanması ve yüklemeye hazırlanması.",
+   meta:["Ahşap kasa","Plaka koruma","Konteyner yükleme hazırlığı"]
+ },
+ "Nakliyat Sigortası": {
+   desc:"Yurt içi ve uluslararası sevkiyatlarda yük risklerine yönelik nakliyat sigortası hizmetleri.",
+   meta:["Taşıma riskleri","Uluslararası sevkiyat","Poliçe seçenekleri"]
+ },
+ "Dış Ticaret Desteği": {
+   desc:"İhracat operasyonu, evrak, teslim şekilleri ve dış ticaret süreçleri için profesyonel destek.",
+   meta:["İhracat evrakları","Incoterms desteği","Operasyon danışmanlığı"]
+ },
+ "Gemi Acenteleri": {
+   desc:"Liman ve gemi operasyonlarında acentelik, yükleme koordinasyonu ve ilgili operasyon hizmetleri.",
+   meta:["Liman operasyonları","Gemi acenteliği","Yükleme koordinasyonu"]
+ },
+ "Fumigasyon & Konteyner İlaçlama": {
+   desc:"İhracat yükleri, ahşap ambalaj ve konteynerler için fumigasyon ve bitki karantinası kapsamında ilaçlama hizmetleri.",
+   meta:["Konteyner fumigasyonu","Ahşap ambalaj","İhracat yükleri"]
+ }
+};
+
+function openMbService(name){
+ const d=MB_SERVICES[name]||{desc:"Bu hizmet için uygun hizmet sağlayıcılarından teklif veya iletişim talebi oluşturabilirsiniz.",meta:[]};
+ const modal=document.getElementById("mbServiceModal");
+ document.getElementById("mbServiceTitle").textContent=name;
+ document.getElementById("mbServiceDesc").textContent=d.desc;
+ document.getElementById("mbServiceMeta").innerHTML=d.meta.map(x=>'<div style="padding:7px 0;border-bottom:1px solid #e5e0d7;font-size:11px">✓ '+x+'</div>').join('');
+ document.getElementById("mbServiceRequestBtn").onclick=function(){
+   closeMbService();
+   if(typeof goToRequest==="function") goToRequest(name);
+ };
+ modal.classList.add("show");
+ modal.setAttribute("aria-hidden","false");
+}
+function closeMbService(){
+ const m=document.getElementById("mbServiceModal");
+ if(m){m.classList.remove("show");m.setAttribute("aria-hidden","true");}
+}
+
+</script>
+
+
+<script>
+document.addEventListener("click", function(e){
+  const card=e.target.closest(".mb-service-card");
+  if(!card) return;
+  const name=card.getAttribute("data-service-name");
+  if(name && typeof openMbService==="function"){
+    e.preventDefault();
+    e.stopPropagation();
+    openMbService(name);
+  }
+});
+document.addEventListener("keydown", function(e){
+  const card=e.target.closest && e.target.closest(".mb-service-card");
+  if(!card || (e.key!=="Enter" && e.key!==" ")) return;
+  const name=card.getAttribute("data-service-name");
+  if(name && typeof openMbService==="function"){
+    e.preventDefault();
+    openMbService(name);
+  }
+});
+</script>
+
+</body>
 </html>
