@@ -1,0 +1,34 @@
+.detail-header .detail-nav{gap:20px}
+.detail-nav a{font-size:13px;color:#31473b;text-decoration:none}
+.detail-nav a:hover{text-decoration:underline}
+.detail-main{max-width:1240px;margin:0 auto;padding:30px 4vw 60px}
+.detail-crumb{display:flex;gap:9px;align-items:center;margin-bottom:22px;color:#688172;font-size:12px}
+.detail-crumb a{color:#355540}
+.detail-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);overflow:hidden;background:white;border:1px solid #dde3dc;border-radius:7px}
+.detail-photo{position:relative;min-height:380px;background-color:#eeeae3;overflow:hidden}
+.detail-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.detail-info{padding:clamp(25px,4vw,58px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.detail-info h1{font-size:clamp(32px,3.3vw,51px);line-height:1.15;margin:15px 0 12px;letter-spacing:-.03em}
+.detail-info p{line-height:1.65;color:#58675d}
+.detail-quote{margin-top:18px;text-decoration:none}
+.detail-specs{padding:28px 0;max-width:780px}
+.detail-specs h2{font-size:24px;font-weight:600}
+.detail-specs dl{border:1px solid #dde3dc;border-radius:6px;background:white;overflow:hidden}
+.detail-specs dl div{display:flex;justify-content:space-between;gap:12px;padding:13px 18px;border-bottom:1px solid #e6e8e2}
+.detail-specs dl div:last-child{border:0}
+.detail-specs dt{color:#58675d}
+.detail-specs dd{margin:0;font-weight:600}
+.detail-specs p{font-size:12px;color:#65796b}
+.detail-related{padding:0 0 25px}
+.detail-related h2{font-size:22px;font-weight:600}
+.detail-related nav{display:flex;gap:9px;flex-wrap:wrap}
+.detail-related a{color:#294739;background:white;border:1px solid #dde3dc;border-radius:4px;padding:8px 12px;font-size:12px;text-decoration:none}
+.detail-related a:hover{text-decoration:underline}
+.detail-supplier-count{display:inline-block;margin-top:10px;color:#294739;font-size:13px;font-weight:700}
+.detail-suppliers{padding-top:12px}
+.detail-suppliers p{font-size:12px;color:#65796b}
+.detail-legal{max-width:780px;padding:28px;background:white;border:1px solid #dde3dc;border-radius:6px}
+.detail-legal h1{font-size:clamp(28px,3vw,38px);margin:12px 0 20px}
+.detail-legal h2{font-size:19px;margin:27px 0 6px}
+.detail-legal p{color:#58675d;line-height:1.7;margin:0}
+@media(max-width:860px){.detail-header .detail-nav{width:100%;order:3;justify-content:flex-start;overflow-x:auto;white-space:nowrap}.detail-card{grid-template-columns:1fr}.detail-photo{min-height:240px}.detail-info{padding:24px}}

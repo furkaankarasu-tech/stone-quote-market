@@ -1,0 +1,44 @@
+
+  <div class="info-strip"><span id="stripText"></span></div>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="Marble Borsa ana sayfa"><span class="brand-symbol">M<span>◈</span></span><span>Marble <span>Borsa</span><small>NATURAL STONE MARKETPLACE</small></span></a>
+    <nav id="topNav" aria-label="Ana gezinme"></nav>
+    <div class="header-actions">
+      <label class="language"><span class="sr-only" id="langLabel">Dil seçimi</span><span aria-hidden="true">◎</span><select id="language" aria-labelledby="langLabel"><option value="tr">TR · Türkçe</option><option value="en">EN · English</option><option value="zh">中文 · 简体</option><option value="ar">العربية</option></select></label>
+      <button id="accountButton" class="button outline" type="button"></button>
+      <button id="signupButton" class="button dark" type="button"></button>
+      <button id="logoutButton" class="button outline header-logout" type="button" hidden></button>
+    </div>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero-content"><div class="eyebrow" id="heroEyebrow"></div><h1 id="heroTitle"></h1><p id="heroLead"></p><div class="hero-actions"><button class="button bright" id="browseButton"></button><button class="button ghost" id="newRequestButton"></button></div><div class="hero-foot"><span class="dot"></span><span id="heroFoot"></span></div></div>
+      <div class="hero-stone">
+        <div class="stone-gallery" id="stoneGallery" role="region" aria-roledescription="carousel" aria-label="Mermer doku görselleri" tabindex="0">
+          <div class="stone-photo" id="stonePhoto" role="img"></div>
+          <div class="stone-gallery-bar">
+            <div class="stone-caption"><small id="stoneNote"></small><strong id="stoneName"></strong><span id="stoneCount"></span></div>
+            <div class="stone-controls"><button type="button" id="stonePrevious" aria-label="Önceki mermer görseli">‹</button><button type="button" id="stoneNext" aria-label="Sonraki mermer görseli">›</button></div>
+          </div>
+          <div class="stone-dots" id="stoneDots" aria-label="Görsel seçimi"></div>
+        </div>
+      </div>
+    </section>
+    <section class="market-section" id="market" aria-labelledby="marketHeading">
+      <div class="section-heading"><div><div class="eyebrow dark" id="marketEyebrow"></div><h2 id="marketHeading"></h2><p id="marketIntro"></p></div></div>
+      <div class="market-layout">
+        <aside class="category-panel"><div class="panel-label" id="categoriesLabel"></div><div id="sideNav"></div><div class="aside-hint"><span class="hint-icon">↗</span><strong id="asideTitle"></strong><p id="asideBody"></p></div></aside>
+        <div class="market-main"><div class="toolbar"><div class="searchbox"><span aria-hidden="true">⌕</span><input id="search" type="search" autocomplete="off"></div><div class="toolbar-right"><span id="resultCount" aria-live="polite"></span><button class="button filter-button" id="resetSearch"></button></div></div><div class="market-topline"><div><h3 id="panelTitle"></h3><p id="panelSubtitle"></p></div><button class="text-button" id="panelAction"></button></div><div id="cards" class="cards"></div><div id="emptyState" class="empty-state" hidden></div><nav id="companyPagination" class="company-pagination" aria-label="Firma sayfaları" hidden></nav><section class="category-companies" id="categoryCompanies" aria-labelledby="categoryCompaniesTitle" hidden><div class="category-companies-heading"><div><h4 id="categoryCompaniesTitle"></h4><p id="categoryCompaniesDescription"></p></div><button type="button" class="button outline" id="categoryCompaniesAction" data-signup-open></button></div><div class="category-companies-list" id="categoryCompaniesList"></div><p class="category-companies-empty" id="categoryCompaniesEmpty" role="status"></p></section></div>
+        <aside class="ad-column"><span class="panel-label" id="adLabel"></span><div class="ad-card"><div class="ad-pattern"></div><span class="ad-tag" id="adTag"></span><strong>Furkan Karasu</strong><p id="adCopy"></p><span class="ad-bottom">MARBLE BORSA · TANITIM</span></div><div class="process-card"><span class="panel-label" id="flowLabel"></span><div class="flow-step"><b>01</b><span id="flow1"></span></div><div class="flow-step"><b>02</b><span id="flow2"></span></div><div class="flow-step"><b>03</b><span id="flow3"></span></div></div></aside>
+      </div>
+    </section>
+    <section class="workspace-section" id="workspace"><div class="workspace-head"><div><div class="eyebrow dark" id="workspaceEyebrow"></div><h2 id="workspaceTitle"></h2><p id="workspaceIntro"></p></div><button id="workspaceAction" class="button dark"></button></div><div id="workspaceContent"></div>
+      <div class="partners-panel" id="partnersPanel" aria-labelledby="partnersTitle">
+        <div class="promotion-heading"><div><span class="partners-eyebrow" id="partnersEyebrow"></span><h2 id="partnersTitle"></h2><p id="partnersDescription"></p></div><span class="promotion-disclaimer" id="partnersDisclaimer"></span></div>
+        <div class="promotion-grid" id="partnerFields"></div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="footer-brand">Marble <span>Borsa</span></div><p id="footerText"></p><nav class="legal-links" aria-label="Yasal metinler"><a href="/tr/yasal/kvkk" data-legal="kvkk">KVKK Aydınlatma Metni</a><a href="/tr/yasal/gizlilik" data-legal="gizlilik">Gizlilik Sözleşmesi</a><a href="/tr/yasal/kullanim-kosullari" data-legal="kullanim-kosullari">Kullanım Koşulları</a></nav><span>© 2026 · Marble Borsa</span></footer>
+  <div class="modal" id="modal" hidden><div class="modal-scrim" data-close></div><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-head"><div><span class="eyebrow dark" id="modalEyebrow"></span><h2 id="modalTitle"></h2></div><button class="icon-button" data-close aria-label="Close">×</button></div><div id="modalBody"></div></div></div>
+  <div id="toast" role="status" aria-live="polite"></div>

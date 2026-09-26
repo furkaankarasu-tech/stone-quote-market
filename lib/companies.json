@@ -1,0 +1,250 @@
+[
+  {
+    "slug": "artemis-marble-co",
+    "name": "Artemis Marble Co.",
+    "city": "Afyonkarahisar",
+    "field": "blockSlab",
+    "texture": "white",
+    "stoneSlugs": [
+      "afyon-white",
+      "afyon-sugar"
+    ]
+  },
+  {
+    "slug": "afyon-stone-works",
+    "name": "Afyon Stone Works",
+    "city": "Afyonkarahisar",
+    "field": "cutSlab",
+    "texture": "white",
+    "stoneSlugs": [
+      "afyon-white",
+      "afyon-sugar"
+    ]
+  },
+  {
+    "slug": "anka-marble",
+    "name": "Anka Marble",
+    "city": "Afyonkarahisar",
+    "field": "blockSlab",
+    "texture": "white",
+    "stoneSlugs": [
+      "afyon-white",
+      "afyon-violet"
+    ]
+  },
+  {
+    "slug": "burdur-beige-stone",
+    "name": "Burdur Beige Stone",
+    "city": "Burdur",
+    "field": "blockSlab",
+    "texture": "beige",
+    "stoneSlugs": [
+      "burdur-beige"
+    ]
+  },
+  {
+    "slug": "marmara-natural-stone",
+    "name": "Marmara Natural Stone",
+    "city": "Balıkesir",
+    "field": "cutSlab",
+    "texture": "grey",
+    "stoneSlugs": [
+      "marmara-white"
+    ]
+  },
+  {
+    "slug": "pamukkale-travertine",
+    "name": "Pamukkale Travertine",
+    "city": "Denizli",
+    "field": "blockSlab",
+    "texture": "travertine",
+    "stoneSlugs": [
+      "denizli-travertine"
+    ]
+  },
+  {
+    "slug": "aegean-stone-trade",
+    "name": "Aegean Stone Trade",
+    "city": "Muğla",
+    "field": "blockSlab",
+    "texture": "white",
+    "stoneSlugs": [
+      "mugla-white",
+      "marmara-white",
+      "denizli-travertine"
+    ]
+  },
+  {
+    "slug": "akropol-stone",
+    "name": "Akropol Stone",
+    "city": "Afyonkarahisar",
+    "field": "blockSlab",
+    "texture": "sugar",
+    "stoneSlugs": [
+      "afyon-sugar"
+    ]
+  },
+  {
+    "slug": "anadolu-mermer",
+    "name": "Anadolu Mermer",
+    "city": "Bilecik",
+    "field": "blockSlab",
+    "texture": "beige",
+    "stoneSlugs": [
+      "bilecik-beige"
+    ]
+  },
+  {
+    "slug": "anatolia-stone-export",
+    "name": "Anatolia Stone Export",
+    "city": "Türkiye",
+    "field": "blockSlab",
+    "texture": "beige",
+    "stoneSlugs": [
+      "burdur-beige",
+      "bilecik-beige",
+      "marmara-white"
+    ]
+  },
+  {
+    "slug": "atlas-natural-stone",
+    "name": "Atlas Natural Stone",
+    "city": "Afyonkarahisar",
+    "field": "blockSlab",
+    "texture": "white",
+    "stoneSlugs": [
+      "afyon-white",
+      "afyon-grey"
+    ]
+  },
+  {
+    "slug": "averon-natural-stone",
+    "name": "Averon Natural Stone",
+    "city": "Afyonkarahisar",
+    "field": "blockSlab",
+    "texture": "violet",
+    "stoneSlugs": [
+      "afyon-violet"
+    ]
+  },
+  {
+    "slug": "bilecik-beige-co",
+    "name": "Bilecik Beige Co.",
+    "city": "Bilecik",
+    "field": "blockSlab",
+    "texture": "beige",
+    "stoneSlugs": [
+      "bilecik-beige"
+    ]
+  },
+  {
+    "slug": "denizli-travertine-co",
+    "name": "Denizli Travertine Co.",
+    "city": "Denizli",
+    "field": "blockSlab",
+    "texture": "travertine",
+    "stoneSlugs": [
+      "denizli-travertine"
+    ]
+  },
+  {
+    "slug": "doruk-natural-stone",
+    "name": "Doruk Natural Stone",
+    "city": "Burdur",
+    "field": "blockSlab",
+    "texture": "beige",
+    "stoneSlugs": [
+      "burdur-beige"
+    ]
+  },
+  {
+    "slug": "eksen-marble",
+    "name": "Eksen Marble",
+    "city": "Afyonkarahisar",
+    "field": "blockSlab",
+    "texture": "violet",
+    "stoneSlugs": [
+      "afyon-violet"
+    ]
+  },
+  {
+    "slug": "iscehisar-marble",
+    "name": "İscehisar Marble",
+    "city": "Afyonkarahisar",
+    "field": "blockSlab",
+    "texture": "white",
+    "stoneSlugs": [
+      "afyon-white"
+    ]
+  },
+  {
+    "slug": "marmara-white-stone",
+    "name": "Marmara White Stone",
+    "city": "Balıkesir",
+    "field": "blockSlab",
+    "texture": "grey",
+    "stoneSlugs": [
+      "marmara-white"
+    ]
+  },
+  {
+    "slug": "mira-marble-export",
+    "name": "Mira Marble Export",
+    "city": "Türkiye",
+    "field": "blockSlab",
+    "texture": "beige",
+    "stoneSlugs": [
+      "burdur-beige",
+      "bilecik-beige",
+      "mugla-white",
+      "marmara-white",
+      "denizli-travertine"
+    ]
+  },
+  {
+    "slug": "mugla-white-marble",
+    "name": "Muğla White Marble",
+    "city": "Muğla",
+    "field": "blockSlab",
+    "texture": "white",
+    "stoneSlugs": [
+      "mugla-white"
+    ]
+  },
+  {
+    "slug": "nexa-stone-industries",
+    "name": "Nexa Stone Industries",
+    "city": "Afyonkarahisar",
+    "field": "blockSlab",
+    "texture": "white",
+    "stoneSlugs": [
+      "afyon-white",
+      "afyon-grey"
+    ]
+  },
+  {
+    "slug": "sultan-stone",
+    "name": "Sultan Stone",
+    "city": "Afyonkarahisar",
+    "field": "blockSlab",
+    "texture": "sugar",
+    "stoneSlugs": [
+      "afyon-sugar"
+    ]
+  },
+  {
+    "slug": "turkiye-stone-supply",
+    "name": "Türkiye Stone Supply",
+    "city": "Türkiye",
+    "field": "blockSlab",
+    "texture": "grey",
+    "stoneSlugs": [
+      "afyon-grey",
+      "burdur-beige",
+      "bilecik-beige",
+      "mugla-white",
+      "marmara-white",
+      "denizli-travertine"
+    ]
+  }
+]
