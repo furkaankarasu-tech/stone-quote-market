@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+  <!-- Editorial texture study; not a photograph of a supplier's product. -->
+  <defs>
+    <linearGradient id="base" x2="1" y2=".7"><stop stop-color="#f5f4f0"/><stop offset=".5" stop-color="#e9eae6"/><stop offset="1" stop-color="#faf9f6"/></linearGradient>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".12" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".07"/></feComponentTransfer></filter>
+  </defs>
+  <path fill="url(#base)" d="M0 0h640v640H0z"/>
+  <path fill="#848b89" opacity=".55" d="M98-20c18 79-10 148 3 234 9 58 37 99 31 167-5 70-31 154-19 279h52c-8-128 24-197 27-272 2-76-32-134-31-186 2-89 38-159 20-222zm231 0c9 105-17 188-4 275 13 89 31 165 18 239-9 54-19 98-8 166h34c-10-68 0-104 13-168 18-87-12-157-15-247-3-86 25-180 10-265zm185 0c-26 74-31 156-24 228 10 105 38 156 25 247-12 81-35 140-20 205h68c-12-76 11-134 17-213 7-92-25-143-35-243-7-80 3-145 40-224z"/>
+  <path fill="none" stroke="#576563" stroke-width="4" opacity=".37" d="M113-10c10 79-20 150-7 229 11 65 34 112 27 180-9 85-26 153-16 254M339-20c6 84-18 180-5 262 9 68 30 158 19 241-11 68-18 113-8 176M520-10c-35 82-30 170-19 247 14 98 36 141 22 228-15 88-35 143-14 198"/>
+  <path fill="none" stroke="#fff" stroke-width="12" opacity=".62" d="M83-15c21 78-16 174-5 250 9 71 29 106 19 167-12 73-27 165-19 251M213-15c-11 90-20 171-6 239 22 109 23 191 5 267-14 64-15 130-5 168M395-15c-15 94-15 158-4 247 11 93 35 162 18 246-14 64-27 121-14 178M607-15c-44 109-36 183-21 259 13 72 35 129 23 207-15 92-33 146-24 209"/>
+  <path fill="#fff" filter="url(#grain)" d="M0 0h640v640H0z"/>
+</svg>
