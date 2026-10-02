@@ -45,13 +45,11 @@ export default function MarketplaceScripts() {
       window.dispatchEvent(new Event("marble-account-ready"));
     };
 
+    // Avoid requestIdleCallback feature detection: it can narrow window to never
+    // in Next.js TypeScript DOM declarations on some builds.
     const scheduleDeferred = () => {
       const runner = () => { void loadDeferred().catch(handleError); };
-      if ("requestIdleCallback" in window) {
-        (window as Window & { requestIdleCallback?: (cb: IdleRequestCallback, options?: IdleRequestOptions) => number }).requestIdleCallback?.(() => runner(), { timeout: 450 });
-      } else {
-        globalThis.setTimeout(runner, 320);
-      }
+      globalThis.setTimeout(runner, 320);
     };
 
     const handleError = (error: unknown) => {
