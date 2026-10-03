@@ -1,0 +1,82 @@
+.guide-wrap{max-width:1240px;margin:auto;padding:28px 4vw 72px;color:#213e35}
+.guide-breadcrumb{display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:#6f8275;font-size:12px;margin:0 0 23px}
+.guide-breadcrumb a{color:#326046;text-decoration:none}.guide-breadcrumb a:hover{text-decoration:underline}
+.guide-hero{border-radius:10px;padding:clamp(35px,5vw,68px);color:white;background:linear-gradient(120deg,rgba(21,48,38,.97),rgba(46,86,65,.95)),url('/market/images/marble/white.webp') center/cover;max-width:100%}
+.guide-kicker{display:block;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#9ab5a1;font-size:10px}.guide-hero .guide-kicker{color:#e0cdab}
+.guide-hero h1{font-size:clamp(32px,4.5vw,56px);max-width:810px;letter-spacing:-.035em;line-height:1.14;margin:12px 0}
+.guide-hero p{font-size:16px;max-width:660px;color:#e5ece6;line-height:1.75}
+.guide-hero-link{display:inline-flex;margin-top:14px;padding:11px 17px;background:#e5d1aa;color:#223e31;font-size:13px;font-weight:700;border-radius:5px;text-decoration:none}
+.guide-heading{margin-top:45px;margin-bottom:21px}.guide-heading h2{font-size:28px;letter-spacing:-.03em;margin:0 0 5px}.guide-heading p{color:#65786b;margin:0}
+.guide-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.guide-tile{display:flex;flex-direction:column;align-items:start;min-height:260px;padding:26px;border:1px solid #dce4db;border-radius:9px;background:#fff;color:#253f32;text-decoration:none;transition:box-shadow .2s}
+.guide-tile:hover{box-shadow:0 14px 30px #1a39251c}.guide-number{font-size:11px;letter-spacing:.12em;color:#7d927f;font-weight:700}.guide-tile h3{font-size:22px;line-height:1.28;letter-spacing:-.02em;margin:15px 0 10px}.guide-tile p{line-height:1.68;color:#67766b;margin:0 0 25px;font-size:13px}.guide-tile-link{margin-top:auto;font-size:13px;font-weight:700;color:#2e6744}
+.guide-category-callout{margin-top:36px;padding:30px;border-radius:8px;background:#e8efe6;display:flex;justify-content:space-between;align-items:center;gap:30px}.guide-category-callout h2{font-size:24px;margin:8px 0}.guide-category-callout p{max-width:740px;line-height:1.6;margin:0;color:#627568}.guide-category-callout>a{color:#214a34;font-weight:700;white-space:nowrap;text-decoration:none}
+.guide-article-layout{display:grid;grid-template-columns:minmax(0,1fr) 288px;gap:44px}.guide-article-layout>.guide-breadcrumb{grid-column:1/-1;margin-bottom:0}.guide-article{min-width:0}.guide-article-intro{border-bottom:1px solid #dae4db;padding:9px 0 30px}.guide-article-intro h1{font-size:clamp(32px,3.6vw,48px);line-height:1.2;letter-spacing:-.03em;margin:13px 0}.guide-article-intro>p{font-size:18px;color:#587265;line-height:1.6;max-width:760px}.guide-section{padding-top:23px}.guide-section h2{font-size:23px;margin:6px 0 10px;letter-spacing:-.02em}.guide-section p,.guide-section li{font-size:15px;line-height:1.85;color:#455a4e}.guide-section p{margin:12px 0}.guide-section ul{padding-left:22px}.guide-section li{padding-left:3px;margin:5px 0}
+.guide-editor-note{margin:36px 0 0;border-left:4px solid #8aab8b;background:#edf3ea;padding:18px 22px;color:#314c3c}.guide-editor-note p{margin:5px 0 0;font-size:13px;line-height:1.7}
+.guide-aside{min-width:0;padding-top:7px}.guide-aside-box{background:white;padding:20px;border:1px solid #e0e8df;border-radius:8px;margin-bottom:17px}.guide-aside-box h2{font-size:19px;margin:7px 0 15px}.guide-stone-item{display:flex;align-items:center;gap:10px;border-top:1px solid #edf1eb;padding:12px 0;color:#294737;text-decoration:none}.guide-stone-item img{width:48px;height:48px;object-fit:cover;border-radius:3px}.guide-stone-item span{flex:1;min-width:0}.guide-stone-item strong{font-size:13px}.guide-stone-item small{display:block;font-size:11px;color:#7a8e80}.guide-stone-item b{color:#578265}.guide-other-link{display:block;text-decoration:none;border-top:1px solid #edf1eb;padding:12px 0;font-size:13px;color:#325640;line-height:1.5}
+.guide-en-nav{display:flex;gap:13px;flex-wrap:wrap;margin:10px 0 30px}.guide-en-nav a{border:1px solid #dce5dc;color:#2a553a;text-decoration:none;border-radius:5px;padding:9px 12px;font-size:13px}
+.guide-en-article{max-width:870px}.guide-en-article .guide-article-intro{margin-bottom:10px}
+.market-guide-preview{max-width:1340px;margin:30px auto 0;padding:28px 4vw;display:flex;align-items:center;gap:32px;background:#f0f4ee;border-top:1px solid #e1e9de;border-bottom:1px solid #e1e9de}.market-guide-preview>div{flex:1}.market-guide-preview h2{font-size:26px;letter-spacing:-.03em;margin:8px 0}.market-guide-preview p{color:#5b7062;line-height:1.7;margin:0;max-width:680px}.market-guide-preview>a{background:#315742;color:#fff;padding:13px 21px;border-radius:6px;text-decoration:none;font-weight:700;font-size:13px;white-space:nowrap}
+.site-header nav a.guide-nav-link{color:#315c40}.guide-nav-link{background:#edf3ed!important}
+@media(max-width:900px){.guide-grid{grid-template-columns:1fr}.guide-tile{min-height:0}.guide-article-layout{grid-template-columns:1fr;gap:25px}.guide-aside{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.guide-aside-box{margin:0}}
+@media(max-width:640px){.guide-wrap{padding:20px 5vw 45px}.guide-hero{padding:34px 22px}.guide-hero p{font-size:14px}.guide-category-callout,.market-guide-preview{flex-direction:column;align-items:flex-start}.guide-aside{grid-template-columns:1fr}.guide-article-intro>p{font-size:16px}.guide-section h2{font-size:21px}.guide-section p,.guide-section li{font-size:14px}.market-guide-preview{margin-top:20px;padding:26px 5vw}}
+
+/* Article pages reuse the marketplace header without loading detail-only page styles. */
+.brand-strip{background:#182e26;color:#e4eee3;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:10px;letter-spacing:.11em;padding:7px 4vw}
+.detail-nav a{text-decoration:none}
+@media(max-width:860px){.detail-header .detail-nav{width:100%;order:3;justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap}}
+/* Always-visible guide language switch: preserve the current article across locales. */
+.guide-lang-switch{display:inline-flex;align-items:center;margin-left:auto}
+.guide-lang-switch select{padding:9px 12px;border:1px solid #bfcfc2;border-radius:5px;background:#fff;color:#254432;max-width:150px;font-size:12px;cursor:pointer}
+[dir="rtl"] .guide-category-callout,[dir="rtl"] .guide-breadcrumb{direction:rtl}
+[dir="rtl"] .guide-section ul{padding-left:0;padding-right:22px}
+@media(max-width:860px){.guide-lang-switch{margin-left:0}.detail-header{flex-wrap:wrap}}
+
+/* B2B sourcing landing pages: reuse existing header, typography and palette. */
+.sourcing-hero{background:linear-gradient(120deg,rgba(21,48,38,.97),rgba(46,86,65,.9)),url('/market/images/marble/white.webp') center/cover}
+.sourcing-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:24px}
+.sourcing-actions .guide-hero-link{margin-top:0}
+.sourcing-outline-button{display:inline-flex;padding:11px 17px;border:1px solid #b5cab8;border-radius:5px;color:#f4faf5;text-decoration:none;font-size:13px;font-weight:700}
+.sourcing-process{margin:38px 0 48px}
+.sourcing-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.sourcing-step{border:1px solid #e0e8dd;border-radius:9px;padding:27px;background:#fff}
+.sourcing-step h3{margin:13px 0 9px;color:#294b38;font-size:21px;line-height:1.25}
+.sourcing-step p{font-size:14px;line-height:1.75;color:#567160;margin:0}
+.sourcing-info-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:46px;align-items:start;border-top:1px solid #e0e8df;padding-top:15px}
+.sourcing-info .guide-section:first-child{padding-top:10px}
+.sourcing-related{margin-top:25px}.sourcing-related h2{line-height:1.4}
+.sourcing-faq{margin:48px 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.sourcing-faq article{background:#edf3eb;padding:24px;border-radius:8px}
+.sourcing-faq h2{font-size:19px;line-height:1.4;margin:0 0 9px;color:#294b38}
+.sourcing-faq p{font-size:14px;line-height:1.75;color:#526f5e;margin:0}
+.sourcing-notice{font-size:12px;line-height:1.7;color:#5b7664;border-top:1px solid #e0e8df;padding-top:18px}
+.market-sourcing-preview{max-width:1340px;margin:22px auto 0;padding:0 4vw;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.market-sourcing-card{border:1px solid #dce8de;border-radius:9px;background:#f7faf5;padding:27px;text-decoration:none;color:#294735;display:flex;flex-direction:column;min-height:192px;gap:10px}
+.market-sourcing-card>small{font-size:11px;letter-spacing:.11em;color:#618368;font-weight:700}
+.market-sourcing-card>strong{font-size:22px;line-height:1.25}
+.market-sourcing-card>span{font-size:13px;color:#5c7465;line-height:1.65}
+.market-sourcing-card>b{font-size:13px;color:#2e6a41;margin-top:auto}
+.market-sourcing-card:hover{box-shadow:0 12px 25px #18382213}
+@media(max-width:850px){.sourcing-steps{grid-template-columns:1fr}.sourcing-info-grid{grid-template-columns:1fr;gap:18px}.sourcing-related{margin-top:0}}
+@media(max-width:640px){.sourcing-faq,.market-sourcing-preview{grid-template-columns:1fr}.market-sourcing-preview{padding:0 5vw}}
+[dir="rtl"] .sourcing-info ul{padding-left:0;padding-right:22px}
+
+.sourcing-guide-links{margin-top:34px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+.sourcing-guide-links a{display:flex;flex-direction:column;gap:11px;border:1px solid #dbe6dd;border-radius:8px;background:#f7faf5;padding:22px;text-decoration:none;color:#254c37}
+.sourcing-guide-links strong{font-size:20px;line-height:1.3}.sourcing-guide-links a>span:last-child{font-size:13px;line-height:1.6;color:#5d7465}
+@media(max-width:640px){.sourcing-guide-links{grid-template-columns:1fr}}
+
+/* Account actions remain available on guide, sourcing, and stone-detail pages. */
+.detail-header-actions{display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap}
+.detail-auth-link{display:inline-flex;align-items:center;justify-content:center;min-height:35px;padding:8px 12px;border:1px solid #cddbd1;border-radius:5px;font-size:11px;font-weight:650;text-decoration:none;color:#294537;background:white;white-space:nowrap}
+.detail-auth-link:hover{border-color:#548366;background:#f0f5f0}
+.detail-auth-primary{border-color:#244b37;background:#244b37;color:white}
+.detail-auth-primary:hover{background:#366649;color:white}
+@media(max-width:780px){.detail-header-actions{width:100%;justify-content:flex-start}.detail-header{flex-wrap:wrap;row-gap:12px}}
+
+/* Shared login state on guide/detail pages. */
+.detail-header-actions .detail-signout{font:inherit;cursor:pointer;border:1px solid #d4ded5;background:#f5f7f2;color:#274735;}
+.detail-header-actions .detail-signout:hover{background:#e8eee5;}
+.detail-header-actions .detail-signout:disabled{opacity:.55;cursor:wait;}
+.detail-account-checking{font-size:11px;color:#597463;white-space:nowrap;}
+.detail-auth-error{font-size:10px;color:#9c4b38;max-width:185px;line-height:1.35;}
