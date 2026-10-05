@@ -1,0 +1,54 @@
+import Link from 'next/link';
+import DetailAuthActions from './DetailAuthActions';
+import type { ReactNode } from 'react';
+import GuideLanguagePicker from './GuideLanguagePicker';
+import { legalLinks } from '@/lib/legalDocuments';
+import { guidePath, type GuideLocale } from '@/lib/translatedGuides';
+
+const ui = {
+  tr: {home:'Ana Sayfa',strap:'DOĞAL TAŞ TEDARİK PLATFORMU',stone:'Doğal Taş',companies:'Firmalar',machines:'Makine & Sarf',services:'Hizmetler',guides:'Mermer Rehberi',legal:'Yasal metinler',login:'Giriş Yap',signup:'Üye Ol'},
+  en: {home:'Home',strap:'NATURAL STONE SOURCING PLATFORM',stone:'Natural Stone',companies:'Companies',machines:'Machinery & Supplies',services:'Services',guides:'Buyer Guides',legal:'Legal notices',login:'Sign in',signup:'Join'},
+  zh: {home:'首页',strap:'天然石材采购平台',stone:'天然石材',companies:'企业',machines:'机械与耗材',services:'服务',guides:'石材选购指南',legal:'法律文件',login:'登录',signup:'注册'},
+  ar: {home:'الرئيسية',strap:'منصة توريد الحجر الطبيعي',stone:'الحجر الطبيعي',companies:'الشركات',machines:'المعدات واللوازم',services:'الخدمات',guides:'دليل شراء الرخام',legal:'المستندات القانونية',login:'تسجيل الدخول',signup:'إنشاء حساب'}
+} as const;
+const marketplaceLink = (path:string, locale:GuideLocale) => `/tr/${path}${locale === 'tr'?'':`?lang=${locale}`}`;
+
+export function DetailHeader({ language = 'tr', slug, languagePicker, activeSection = 'none' }: { language?: GuideLocale; slug?: string; languagePicker?: ReactNode; activeSection?: 'none' | 'guide' | 'stone' }) {
+  const t=ui[language];
+  return <>
+    <div className="brand-strip"><span>{t.strap}</span></div>
+    <header className="site-header detail-header">
+      <a className="brand" href={language === 'tr' ? '/' : `/?lang=${language}`}>
+        <span className="brand-symbol">M<span>◈</span></span>
+        <span>Marble <span>Borsa</span><small>NATURAL STONE MARKETPLACE</small></span>
+      </a>
+      <nav className="detail-nav" aria-label="Primary navigation">
+        <a href={language === 'tr' ? '/' : `/?lang=${language}`}>{t.home}</a>
+        <a className={activeSection === 'stone' ? 'active' : undefined} href={marketplaceLink('dogal-tas', language)}>{t.stone}</a>
+        <a href={marketplaceLink('firmalar',language)}>{t.companies}</a>
+        <a href={marketplaceLink('makine-sarf',language)}>{t.machines}</a>
+        <a href={marketplaceLink('hizmetler',language)}>{t.services}</a>
+        <a className={`guide-nav-link${activeSection === 'guide' ? ' active' : ''}`} aria-current={activeSection === 'guide' ? 'page' : undefined} href={guidePath(language)}>{t.guides}</a>
+      </nav>
+      <div className="detail-header-actions">
+        {languagePicker ?? <GuideLanguagePicker locale={language} slug={slug}/>}
+        <DetailAuthActions language={language}/>
+      </div>
+    </header>
+  </>;
+}
+
+export function DetailFooter({ language = 'tr' }: {language?: GuideLocale}) {
+  const t=ui[language];
+  return <footer lang={language} dir={language === 'ar'?'rtl':'ltr'}>
+    <div className="footer-brand">Marble <span>Borsa</span></div>
+    <nav className="legal-links" aria-label="Guide navigation">
+      <Link href={guidePath(language)}>{t.guides}</Link>
+      <a href={marketplaceLink('dogal-tas',language)}>{t.stone}</a>
+    </nav>
+    <nav className="legal-links" aria-label={t.legal}>
+      {legalLinks.map(link => <a key={link.href} href={link.href} data-legal={link.href.split('/').at(-1)}>{language==='tr'?link.label:`${language==='en'?'Legal notice':language==='zh'?'法律文件':'مستند قانوني'} (TR): ${link.label}`}</a>)}
+    </nav>
+    <span>© 2026 Marble Borsa</span>
+  </footer>;
+}
