@@ -1,0 +1,55 @@
+import Link from 'next/link';
+
+import { guidePath, marketPath, type GuideLocale } from '@/lib/guideRoutes';
+import { getSourcingCopy, sourcingPath, buyerJourney, buyerLandingKinds, buyerLandingPath, getBuyerLandingCopy, type SourcingCopy, type SourcingTopic } from '@/lib/sourcingContent';
+
+
+export default function SourcingPage({ locale, topic, copy }: {locale:GuideLocale;topic:SourcingTopic;copy?:SourcingCopy}) {
+  const t=copy || getSourcingCopy(locale,topic);
+  const otherTopic: SourcingTopic=topic==='quote'?'b2b':'quote';
+  const home=marketPath(locale);
+  return <>
+    <main className="guide-wrap sourcing-wrap" id="main-content" lang={locale==='zh'?'zh-CN':locale} dir={locale==='ar'?'rtl':'ltr'}>
+      <nav aria-label="Breadcrumb" className="guide-breadcrumb">
+        <a href={home}>{t.homeLabel}</a><span>/</span><span aria-current="page">{t.title}</span>
+      </nav>
+      <header className="guide-hero sourcing-hero">
+        <span className="guide-kicker">{t.eyebrow}</span>
+        <h1>{t.title}</h1>
+        <p>{t.intro}</p>
+        <div className="sourcing-actions">
+          <a className="guide-hero-link" href={marketPath(locale,"stones")}>{t.firstCta} ↗</a>
+          <Link className="sourcing-outline-button" href={guidePath(locale)}>{t.secondCta} ↗</Link>
+        </div>
+      </header>
+      <section className="sourcing-process" aria-labelledby="sourcing-steps">
+        <div className="guide-heading"><h2 id="sourcing-steps">{t.sectionTitle}</h2></div>
+        <div className="sourcing-steps">{t.steps.map((step,i)=><article className="sourcing-step" key={step.heading}>
+          <span className="guide-number">{String(i+1).padStart(2,'0')}</span>
+          <h3>{step.heading}</h3><p>{step.body}</p>
+        </article>)}</div>
+      </section>
+      <div className="sourcing-info-grid">
+        <article className="sourcing-info">
+          {t.details.map(section=><section className="guide-section" key={section.heading}>
+            <h2>{section.heading}</h2>{section.paragraphs.map(para=><p key={para}>{para}</p>)}
+            {section.bullets&&<ul>{section.bullets.map(item=><li key={item}>{item}</li>)}</ul>}
+          </section>)}
+        </article>
+        <aside className="guide-aside-box sourcing-related">
+          <span className="guide-kicker">{t.relatedLabel}</span><h2>{t.relatedTitle}</h2>
+          <Link className="guide-other-link" href={sourcingPath(otherTopic,locale)}>{t.otherTopicLabel} ↗</Link>
+          {topic !== 'buy' && <Link className="guide-other-link" href={sourcingPath('buy',locale)}>{getSourcingCopy(locale,'buy').title} ↗</Link>}
+          <Link className="guide-other-link" href={guidePath(locale)}>{t.guideLabel} ↗</Link>
+        </aside>
+      </div>
+      {topic==='buy'&&<section className="guide-section"><h2>{({tr:'Almak istediğiniz ürüne göre ilerleyin',en:'Choose the marble supply you need',ar:'اختر نوع توريد الرخام المناسب',zh:'按采购需求继续了解'})[locale]}</h2>{buyerLandingKinds.map(kind=>({kind,page:getBuyerLandingCopy(locale,kind)})).filter(({page})=>page.title!==t.title).map(({kind,page})=><Link className="guide-other-link" key={kind} href={buyerLandingPath(locale,kind)}>{page.title} ↗</Link>)}</section>}
+      <section className="sourcing-faq" aria-label="FAQ">
+        {t.faqs.map(item=><article key={item.question}><h2>{item.question}</h2><p>{item.answer}</p></article>)}
+      </section>
+      {topic==='buy'&&<nav className="sourcing-actions" aria-label={t.sectionTitle}><a className="sourcing-outline-button" href={marketPath(locale,"companies")}>{buyerJourney[locale].companies} ↗</a><a className="guide-hero-link" href={`/${locale}/profil?auth=signup`}>{buyerJourney[locale].request} ↗</a></nav>}
+      <p className="sourcing-notice">{t.notice}</p>
+    </main>
+    
+  </>;
+}
